@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="result">
+        <span class="quote"></span>
+    </div>
+    <button class="cake">클릭</button>
+    <script>
+        let cake = document.querySelector('.cake');
+        let quote = document.querySelector('.quote');
+        cake.onclick = function(){
+            newQuote();
+        }
+        let newQuote = function(){
+            let index = Math.floor(Math.random()*quotes.length);
+            quote.innerHTML=quotes[index];
+        }
+        let quotes = ["좋은 결과","보통 결과","나쁜 결과"];
+    </script>
+</body>
+</html>
