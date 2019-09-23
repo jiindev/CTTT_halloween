@@ -4,24 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../common/css/reset.css">
+    <link rel="stylesheet" href="../common/css/animate.min.css">
+    <link rel="stylesheet" href="css/fortune.css">
     <title>Document</title>
 </head>
 <body>
-    <div class="result">
+    <div class="wrap">
+        <div class="start_page">
+            <div class="start_illust">
+                    <div class="start_btn animated infinite bounce"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- <div class="result">
         <span class="quote"></span>
     </div>
-    <button class="cake">클릭</button>
-    <script>
-        let cake = document.querySelector('.cake');
-        let quote = document.querySelector('.quote');
-        cake.onclick = function(){
-            newQuote();
-        }
-        let newQuote = function(){
-            let index = Math.floor(Math.random()*quotes.length);
-            quote.innerHTML=quotes[index];
-        }
-        let quotes = ["좋은 결과","보통 결과","나쁜 결과"];
-    </script>
+    <button class="cake">클릭</button> -->
+    <script src="./js/fortune.js"></script>
 </body>
 </html>

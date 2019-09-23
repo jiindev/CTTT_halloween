@@ -1,0 +1,21 @@
+
+.start_page{
+    width: 100vw;
+    height: 100vh;
+}
+
+.start_illust{
+    margin: 0 auto;
+    width: 700px;
+    height: 700px;
+    background:url("../img/startpage_box.png");
+    position: relative;
+}
+.start_btn{
+    position: absolute;
+    width: 210px;
+    height: 154px;
+    background:url("../img/start_bt.png");
+    top: 300px;
+    left: 100px;
+}
