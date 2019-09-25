@@ -10,7 +10,6 @@
     height: 700px;
     background:url("../img/startpage_box.png");
     position: relative;
-    display: none;
 }
 .start_btn{
     position: absolute;
@@ -31,6 +30,7 @@
     background-position: center center;
     background-repeat: no-repeat;
     position: relative;
+    display: none;
 }
 
 .fork{
@@ -41,9 +41,32 @@
     position: absolute;
     left: 10px;
     top:10px;
+    pointer-events: none;
+    z-index: 6;
 }
-
-.cake_left_top{
+.left_cake{
+    position: relative;
+    top: 130px;
+    left: 100px;
+    transition: all .5s ease;
+}
+.cake{
+    transform: rotate(20deg) translateX(120px);
+}
+.moved .left_cake{
+    left:-20px;
+    transition: all .5s ease;
+}
+.moved .right_cake{
+    left:220px;
+    transition: all .5s ease;
+}
+.right_cake{
+    position: relative;
+    top: 130px;
+    left: 100px;
+}
+.left_cake .cake_top{
     width: 230px;
     height: 416px;
     background-image: url(../img/cake_1_left.png);
@@ -51,10 +74,32 @@
     background-position: center center;
     background-repeat: no-repeat;
     position: absolute;
-    top: 130px;
-    left: 100px;
+    z-index: 5;
 }
-.cake_right_top{
+.left_cake .cake_middle{
+    width: 27px;
+    height: 417px;
+    background-image: url(../img/cake_2_left.png);
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 230px;
+    z-index: 4;
+}
+.left_cake .cake_bottom{
+    width: 46px;
+    height: 416px;
+    background-image: url(../img/cake_3_left.png);
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0px;
+    left: 255px;
+}
+.right_cake .cake_top{
     width: 230px;
     height: 416px;
     background-image: url(../img/cake_1_right.png);
@@ -62,6 +107,36 @@
     background-position: center center;
     background-repeat: no-repeat;
     position: absolute;
-    top: 125px;
-    left: 330px;
+    top: 0;
+    left: 230px;
+    z-index: 5;
+}
+.paper{
+    width: 398px;
+    height: 125px;
+    background-image: url(../img/paper.png);
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 240px;
+    left: 130px;
+    z-index: 3;
+    text-align: center;
+}
+
+.paper .quote{
+    padding-top: 30px;
+}
+.cake_dregs{
+    width: 409px;
+    height: 505px;
+    background-image: url(../img/cake_4.png);
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top:100px;
+    left: 100px;
+    display: none;
 }
