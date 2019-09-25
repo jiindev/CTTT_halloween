@@ -1,15 +1,16 @@
 
-.start_page{
+.fortune_page{
     width: 100vw;
     height: 100vh;
 }
 
-.start_illust{
+.start_page{
     margin: 0 auto;
     width: 700px;
     height: 700px;
     background:url("../img/startpage_box.png");
     position: relative;
+    display: none;
 }
 .start_btn{
     position: absolute;
@@ -18,4 +19,49 @@
     background:url("../img/start_bt.png");
     top: 300px;
     left: 100px;
+    cursor: pointer;
+}
+
+.cake_page{
+    width: 700px;
+    height: 700px;
+    margin: 0 auto;
+    background-image: url(../img/plate.png);
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.fork{
+    width: 133px;
+    height: 488px;
+    background-image: url(../img/fork.png);
+    background-size: contain;
+    position: absolute;
+    left: 10px;
+    top:10px;
+}
+
+.cake_left_top{
+    width: 230px;
+    height: 416px;
+    background-image: url(../img/cake_1_left.png);
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 130px;
+    left: 100px;
+}
+.cake_right_top{
+    width: 230px;
+    height: 416px;
+    background-image: url(../img/cake_1_right.png);
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 125px;
+    left: 330px;
 }
