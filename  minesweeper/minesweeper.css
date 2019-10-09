@@ -1,0 +1,25 @@
+#computer{
+    width:150px;
+    height: 243px;
+    background: blue;
+}
+table{
+    border-collapse: collapse;
+    cursor: pointer;
+}
+td{
+    border: 1px solid black;
+    width: 20px;
+    height: 20px;
+    vertical-align: center;
+    text-align: center;
+}
+td.opened{
+    background-color:grey;
+}
+td.qst{
+    background-color: red;
+}
+td.flag{
+    background-color: blue;
+}
