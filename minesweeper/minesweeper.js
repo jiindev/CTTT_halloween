@@ -18,9 +18,12 @@ document.querySelector('#exec').addEventListener('click', function () {
     tbody.innerHTML = '';
     dataset = [];
     document.querySelector('#result').textContent='';
-    let hor = parseInt(document.querySelector('#hor').value);
-    let ver = parseInt(document.querySelector('#ver').value);
-    let mine = parseInt(document.querySelector('#mine').value);
+    // let hor = parseInt(document.querySelector('#hor').value);
+    // let ver = parseInt(document.querySelector('#ver').value);
+    // let mine = parseInt(document.querySelector('#mine').value);
+    let hor = 10;
+    let ver = 10;
+    let mine = 10;
 
     //지뢰의 위치 뽑기
     let num_list = Array(hor * ver)
@@ -51,16 +54,14 @@ document.querySelector('#exec').addEventListener('click', function () {
                 let parentTbody = e.currentTarget.parentNode.parentNode;
                 let tdX = Array.prototype.indexOf.call(parentTr.children, e.currentTarget);
                 let tdY = Array.prototype.indexOf.call(parentTbody.children, parentTr);
-                if (e.currentTarget.textContent === '' || e.currentTarget.textContent === 'X') {
-                    e.currentTarget.textContent = '!';
+                if (dataset[tdY][tdX] === code.normal || dataset[tdY][tdX] === code.mine) {
                     e.currentTarget.classList.add('flag');
                     if(dataset[tdY][tdX]===code.mine){
                         dataset[tdY][tdX]=code.flagmine;
                     }else{
                         dataset[tdY][tdX]=code.flag;
                     }
-                } else if (e.currentTarget.textContent === '!') {
-                    e.currentTarget.textContent = '?';
+                } else if (dataset[tdY][tdX] === code.flag || dataset[tdY][tdX] === code.flagmine) {
                     e.currentTarget.classList.add('qst');
                     e.currentTarget.classList.remove('flag');
                     if(dataset[tdY][tdX]===code.flagmine){
@@ -68,7 +69,7 @@ document.querySelector('#exec').addEventListener('click', function () {
                     }else{
                         dataset[tdY][tdX]=code.qst;
                     }
-                } else if (e.currentTarget.textContent === '?') {
+                } else if (dataset[tdY][tdX] === code.qst || dataset[tdY][tdX] === code.qstmine) {
                     e.currentTarget.classList.remove('qst');
                     if (dataset[tdY][tdX] === code.qstmine) {
                         e.currentTarget.textContent = 'X';
@@ -93,9 +94,16 @@ document.querySelector('#exec').addEventListener('click', function () {
                 //클릭 시 주변 지뢰 개수
                 e.currentTarget.classList.add('opened');
                 if (dataset[tdY][tdX] === code.mine) {
-                    e.currentTarget.textContent = '펑';
                     document.querySelector('#result').textContent='실패!';
                     stopFlag = true;
+                    for(let i=0; i<dataset.length; i++){
+                        for(let j=0; j<dataset[i].length; j++){
+                            if(dataset[i][j]===code.mine){
+                                tbody.children[i].children[j].style.backgroundImage = "url('./img/ghost1@2x.png')";
+                            }
+                        }
+                    }
+                    e.currentTarget.style.backgroundImage = "url('./img/ghostSelect1@2x.png')";
                 } else {
                     openSqr++;
                     let around = [
@@ -110,7 +118,7 @@ document.querySelector('#exec').addEventListener('click', function () {
                     let aroundMine = around.filter(function (v) {
                         return [code.mine, code.qstmine, code.flagmine].includes(v);
                     }).length;
-                    e.currentTarget.textContent = aroundMine || '';
+                    e.currentTarget.style.backgroundImage = "url('./img/num"+aroundMine+"@2x.png')";
                     dataset[tdY][tdX]=code.open;
                     if (aroundMine === 0) {
                         let aroundSqr = [];

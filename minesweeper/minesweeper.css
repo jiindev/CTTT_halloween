@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
+
+
+body{
+    background-image: url(./img/bg@2x.png);
+    background-size: 500px 500px;
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+}
+#exec{
+    position: fixed;
+    z-index: 33333;
+}
+.fixed_logo{
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    z-index: 500;
+}
+.logo{
+    width: 100px;
+    height: 124px;
+    background-image: url(./img/logo@2x.png);
+    display: block;
+    background-size: contain;
+}
+.top{
+    position: relative;
+    width: 420px;
+    height: 200px;
+    margin: 0 auto;
+    overflow: hidden;
+    margin-top:140px;
+}
+.time{
+    width: 100px;
+    height: 120px;
+    background-image: url(./img/timeCount@2x.png);
+    background-size: contain;
+    position: absolute;
+    text-indent: 30px;
+    line-height: 150px;
+    left:-10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #C13C3C;
+}
+.mine_num{
+    width: 100px;
+    height: 120px;
+    background-image: url(./img/ghostNum@2x.png);
+    background-size: contain;
+    position: absolute;
+    right:-10px;
+    text-indent: 30px;
+    line-height: 150px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #3C3CC1;
+}
+.face{
+    width: 260px;
+    height: 160px;
+    background-image: url(./img/DDfaceNormal@2x.png);
+    background-size: contain;
+    margin: 0 auto;
+    position: absolute;
+    top: 0;
+    left: 80px;
+    z-index: 333;
+}
+.top_bg{
+    width: 420px;
+    height: 72px;
+    background-image: url(./img/mobileGameBgTop@2x.png);
+    background-size: contain;
+    border-radius: 0 0 30px 30px;
+    margin: 0 auto;
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+}
+.game_section{
+    background-color: #fff;
+    width: 420px;
+    height: 510px;
+    margin: 0 auto;
+    border-radius: 30px;
+    padding-top:50px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 300;
+}
+
+.deco1{
+    width: 118px;
+    height: 132px;
+    background-image: url(./img/decoGhost@2x.png);
+    background-size: contain;
+    top: 30px;
+    left: -80px;
+    position: absolute;
+    z-index: 10;
+}
+.deco2{
+    width: 170px;
+    height: 260px;
+    background-image: url(./img/decoFlag@2x.png);
+    background-size: contain;
+    position: absolute;
+    top: 150px;
+    left: -130px;
+}
+.deco3{
+    width: 220px;
+    height: 240px;
+    background-image: url(./img/decoShovel@2x.png);
+    background-size: contain;
+    position: absolute;
+    top: 50px;
+    right: -180px;
+}
+
+table{
+    border-collapse: collapse;
+    cursor: pointer;
+    margin: 0 auto;
+}
+td{
+    border: 1px solid black;
+    width: 35px;
+    height: 35px;
+    vertical-align: center;
+    text-align: center;
+    background-image: url(./img/normal1@2x.png);
+    background-size: cover;
+}
+td.opened{
+    background-image: url(./img/opened@2x.png);
+}
+td.qst{
+    background-image: url(./img/qst1@2x.png);
+}
+td.flag{
+    background-image: url(./img/flag@2x.png);
+}
