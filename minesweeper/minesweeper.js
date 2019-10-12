@@ -20,6 +20,7 @@ function start(){
     tbody.innerHTML = '';
     dataset = [];
     document.querySelector('#result').textContent = '';
+    let flagNum = 0;
     // let hor = parseInt(document.querySelector('#hor').value);
     // let ver = parseInt(document.querySelector('#ver').value);
     // let mine = parseInt(document.querySelector('#mine').value);
@@ -27,7 +28,7 @@ function start(){
     let ver = 10;
     let mine = 10;
     document.querySelector('.face').style.backgroundImage = "url('./img/DDfaceNormal@2x.png')";
-    document.querySelector('.mine_num').textContent='0'+mine;
+    document.querySelector('.mine_num').textContent=mine;
     document.querySelector('.time').textContent='000';
     //지뢰의 위치 뽑기
     let num_list = Array(hor * ver)
@@ -61,6 +62,7 @@ function start(){
                 let tdY = Array.prototype.indexOf.call(parentTbody.children, parentTr);
                 if (dataset[tdY][tdX] === code.normal || dataset[tdY][tdX] === code.mine) {
                     e.currentTarget.classList.add('flag');
+                    flagNum++;
                     if (dataset[tdY][tdX] === code.mine) {
                         dataset[tdY][tdX] = code.flagmine;
                     } else {
@@ -69,6 +71,7 @@ function start(){
                 } else if (dataset[tdY][tdX] === code.flag || dataset[tdY][tdX] === code.flagmine) {
                     e.currentTarget.classList.add('qst');
                     e.currentTarget.classList.remove('flag');
+                    flagNum--;
                     if (dataset[tdY][tdX] === code.flagmine) {
                         dataset[tdY][tdX] = code.qstmine;
                     } else {
@@ -84,6 +87,7 @@ function start(){
                         dataset[tdY][tdX] = code.normal;
                     }
                 }
+                document.querySelector('.mine_num').textContent = mine-flagNum;
             });
             td.addEventListener('mousedown',function(e){
                 let parentTr = e.currentTarget.parentNode;

@@ -55,7 +55,7 @@ body{
     background-size: contain;
     position: absolute;
     right:-10px;
-    text-indent: 30px;
+    text-indent: 40px;
     line-height: 150px;
     font-size: 20px;
     font-weight: bold;
@@ -127,6 +127,7 @@ table{
     border-collapse: collapse;
     cursor: pointer;
     margin: 0 auto;
+    -webkit-tap-highlight-color : transparent;
 }
 td{
     border: 1px solid black;
