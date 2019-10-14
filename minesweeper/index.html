@@ -7,31 +7,45 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="minesweeper.css">
     <title>디디의 유령찾기</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 </head>
 
 <body>
     <div class="fixed_logo">
         <a href="#"><span class="logo"></span></a>
     </div>
+    <div class="modal animated bounceInDown">
+        <div class="start_page">
+            <div class="illust"></div>
+            <div class="text">
+                <span class="tail"></span>
+                <p>디디를 도와 유령을 피해 땅을 파내자!</p>
+            </div>
+        </div>
+        <button class="go_btn">GO!</button>
+    </div>
+    <div class="modal_back animated fadeIn"></div>
     <div class="top">
         <div class="time">000</div>
         <div class="mine_num">10</div>
         <div class="face"></div>
         <div class="top_bg"></div>
     </div>
-    
-    <div class="game_section">
-        <div class="deco">
-            <div class="deco1"></div>
-            <div class="deco2"></div>
-            <div class="deco3"></div>
-        </div>
-            <table id="table">
-                <tbody></tbody>
-            </table>
-            <div id="result">  
+    <div class="bottom">
+        <div class="game_section">
+            <div class="deco">
+                <div class="deco1"></div>
+                <div class="deco2"></div>
+                <div class="deco3"></div>
             </div>
+                <table id="table">
+                    <tbody></tbody>
+                </table>
+                <div id="result">  
+                </div>
+        </div>
     </div>
+    
     <footer>
         copyright(c) 2019 CTTT All rights reserved
     </footer>

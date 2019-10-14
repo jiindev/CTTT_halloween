@@ -12,8 +12,22 @@ let code = {
     normal: 0
 }
 
-start();
-function start(){
+
+//각 스테이지마다 나오는 모달창 애니메이션
+let stage = 1;
+
+document.querySelector('.go_btn').addEventListener('click',function(){
+    document.querySelector('.modal').classList.remove('bounceInDown');
+    document.querySelector('.modal').classList.add('bounceOutUp');
+    setting();
+    document.querySelector('.modal_back').classList.remove('fadeIn');
+    document.querySelector('.modal_back').classList.add('fadeOut');
+    setTimeout(function(){
+        document.body.removeChild(document.querySelector('.modal_back'));
+    },1000)
+})
+
+function setting(){
     //내부 먼저 초기화
     openSqr = 0;
     stopFlag = false;
@@ -21,11 +35,8 @@ function start(){
     dataset = [];
     document.querySelector('#result').textContent = '';
     let flagNum = 0;
-    // let hor = parseInt(document.querySelector('#hor').value);
-    // let ver = parseInt(document.querySelector('#ver').value);
-    // let mine = parseInt(document.querySelector('#mine').value);
-    let hor = 10;
-    let ver = 10;
+    let hor = 9;
+    let ver = 9;
     let mine = 10;
     document.querySelector('.face').style.backgroundImage = "url('./img/DDfaceNormal@2x.png')";
     document.querySelector('.mine_num').textContent=mine;
@@ -120,7 +131,7 @@ function start(){
                     button.textContent='다시하기';
                     document.querySelector('#result').appendChild(button);
                     document.querySelector('#exec').addEventListener('click', function () {
-                        start();
+                        setting();
                     });
                     stopFlag = true;
                     for (let i = 0; i < dataset.length; i++) {
