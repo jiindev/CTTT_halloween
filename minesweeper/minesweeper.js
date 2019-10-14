@@ -11,33 +11,64 @@ let code = {
     mine: 1,
     normal: 0
 }
+let hor,ver,mine;
 
+//1라운드 시작
+let stage=1;
+showModal(stage);
 
 //각 스테이지마다 나오는 모달창 애니메이션
-let stage = 1;
+function showModal(stage){
+    let modal_back = document.querySelector('.modal_back');
+    let modal = document.querySelector('.modal');
+    document.querySelector('.modal_back').style.display='block';
+    modal.children[stage-1].classList.add('show');
+    modal.children[stage-1].classList.add('show');
+    modal.classList.remove('bounceOutUp');
+    modal.classList.add('bounceInDown');
+    modal_back.classList.remove('fadeOut');
+    modal_back.classList.add('fadeIn');
+    document.querySelector('.go_btn').addEventListener('click',function(){
+        setting();
+        modal.classList.remove('bounceInDown');
+        modal.classList.add('bounceOutUp');
+        modal_back.classList.remove('fadeIn');
+        modal_back.classList.add('fadeOut');
+        setTimeout(function(){
+            modal_back.style.display='none';
+            modal.children[stage-1].classList.remove('show');
+        },1000)
+    })
+}
 
-document.querySelector('.go_btn').addEventListener('click',function(){
-    document.querySelector('.modal').classList.remove('bounceInDown');
-    document.querySelector('.modal').classList.add('bounceOutUp');
-    setting();
-    document.querySelector('.modal_back').classList.remove('fadeIn');
-    document.querySelector('.modal_back').classList.add('fadeOut');
-    setTimeout(function(){
-        document.body.removeChild(document.querySelector('.modal_back'));
-    },1000)
-})
 
+
+//지뢰찾기 세팅
 function setting(){
     //내부 먼저 초기화
+    let clear = false;
     openSqr = 0;
     stopFlag = false;
     tbody.innerHTML = '';
     dataset = [];
     document.querySelector('#result').textContent = '';
+    //스테이지 별 난이도 조절
+    if(stage===1){
+        hor = 9;
+        ver = 9;
+        mine = 10;
+    }else if(stage===2){
+        hor = 9;
+        ver = 28;
+        mine = 40;
+    }else if(stage===3){
+        hor = 9;
+        ver = 52;
+        mine = 99;
+    }
+
     let flagNum = 0;
-    let hor = 9;
-    let ver = 9;
-    let mine = 10;
+    
     document.querySelector('.face').style.backgroundImage = "url('./img/DDfaceNormal@2x.png')";
     document.querySelector('.mine_num').textContent=mine;
     document.querySelector('.time').textContent='000';
@@ -124,6 +155,7 @@ function setting(){
                 }
                 //클릭 시 주변 지뢰 개수
                 e.currentTarget.classList.add('opened');
+                //실패
                 if (dataset[tdY][tdX] === code.mine) {
                     document.querySelector('#result').textContent = 'FAIL!'; 
                     let button = document.createElement('button');
@@ -195,9 +227,16 @@ function setting(){
 
                     };
                 }
+                //스테이지 클리어
                 if (openSqr === hor * ver - mine) {
                     stopFlag = true;
-                    document.querySelector('#result').textContent = '승리!';
+                    //한번만 실행되도록
+                    if(clear==false){
+                        stage++;
+                        clear = true;
+                    }
+                    clearInterval(timeCount);
+                    showModal(stage);
                 }
             });
             tr.appendChild(td);
@@ -231,6 +270,8 @@ function setting(){
             clearInterval(timeCount);
         }
     }, 1000);
+
+    
 }
 
 

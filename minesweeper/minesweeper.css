@@ -40,6 +40,18 @@ body{
 .start_page .illust{
     background-image: url(./img/frameDDgame1@2x.png);
 }
+.modal>div{
+    display: none;
+}
+.modal>div.show{
+    display: block;
+}
+.stage_two .illust,.stage_three .illust{
+    background-image: url(./img/frameDDgame2@2x.png);
+}
+.finish .illust{
+    background-image: url(./img/frameDDgame3@2x.png);
+}
 
 .modal p{
     background-color: #fff;
