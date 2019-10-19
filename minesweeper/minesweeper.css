@@ -5,9 +5,7 @@ body,html{
     width: 100%;
 }
 body{
-    background-image: url(./img/bg@2x.png);
-    background-size: 500px 500px;
-    font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+    
     margin: 0;
     padding: 0;
 }
@@ -98,19 +96,7 @@ body{
     font-size: 14px;
     color: white;
 }
-.fixed_logo{
-    position: fixed;
-    top: 50px;
-    left: 50px;
-    z-index: 500;
-}
-.logo{
-    width: 100px;
-    height: 124px;
-    background-image: url(./img/logo@2x.png);
-    display: block;
-    background-size: contain;
-}
+
 .top{
     position: relative;
     width: 420px;
@@ -249,10 +235,3 @@ td.flag{
     font-weight: bold;
 }
 
-footer{
-    color:#fff;
-    font-weight: 100;
-    font-size: 12px;
-    text-align: center;
-    padding: 0 0 10px 0;
-}

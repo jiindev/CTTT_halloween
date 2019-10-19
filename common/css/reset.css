@@ -46,3 +46,33 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+/* 공통요소 추가 */
+
+body{
+	background-image: url(../img/bg@2x.png);
+    background-size: 500px 500px;
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+}
+
+footer{
+    color:#fff;
+    font-weight: 100;
+    font-size: 12px;
+    text-align: center;
+    padding: 0 0 10px 0;
+}
+
+.fixed_logo{
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    z-index: 500;
+}
+.logo{
+    width: 100px;
+    height: 124px;
+    background-image: url(../img/logo@2x.png);
+    display: block;
+    background-size: contain;
+}

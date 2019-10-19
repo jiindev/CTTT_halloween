@@ -1,0 +1,235 @@
+.mobile_top{
+    display: none;
+}
+.main_illust {
+    width: 924px;
+    height: 618px;
+    background-image: url(./img/mainBackground.png);
+    background-size: contain;
+    margin: 50px auto;
+    position: relative;
+}
+
+.main_illust .game_sec {
+    position: absolute;
+    animation-name: balloon;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+.main_text{
+    padding: 16px 28px;
+    background-color: #fff;
+    border-radius: 30px;
+    display: inline-block;
+    top: 0;
+    left: 400px;
+    position: absolute;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.game_sec a {
+    background-size: contain;
+    display: block;
+}
+
+@-webkit-keyframes balloon {
+    0% {
+        margin-top: 0;
+    }
+
+    50% {
+        margin-top: -5px;
+    }
+
+    100% {
+        margin-top: 0;
+    }
+}
+
+.text {
+    padding: 16px 28px;
+    background-color: #fff;
+    border-radius: 30px;
+    display: block;
+    top: -200px;
+    position: relative;
+    left: -20%;
+    text-align: center;
+    line-height: 1.5;
+    opacity: 0;
+    transition: all .5s ease;
+}
+
+.text:after,.main_text:after {
+    content: '';
+    width: 50px;
+    height: 50px;
+    display: block;
+    position: absolute;
+    background-image: url(./img/talkTailLow.png);
+    background-size: contain;
+    left: 50%;
+    margin-left: -25px;
+}
+
+
+.game_sec:hover .text {
+    opacity: 1;
+}
+
+.thanks {
+    top: 350px;
+    left: 12px;
+}
+
+.thanks a {
+    width: 100px;
+    height: 100px;
+    background-image: url(./img/mainButtonThanks.png);
+}
+
+.fortune {
+
+    top: 305px;
+    left: 155px;
+}
+
+.fortune a {
+    background-image: url(./img/mainButtonFortune.png);
+    width: 123px;
+    height: 126px;
+}
+
+.pumpkin {
+    top: 376px;
+    left: 310px;
+}
+
+.pumpkin a {
+    background-image: url(./img/mainButtonPumpkin.png);
+    width: 124px;
+    height: 124px;
+}
+
+.card {
+    top: 184px;
+    left: 457px;
+}
+
+.card a {
+    background-image: url(./img/mainCardmatch.png);
+    width: 185px;
+    height: 249px;
+}
+
+.card .text {
+    top: -300px;
+}
+
+.mine {
+    top: 329px;
+    left: 647px;
+}
+
+.mine a {
+    background-image: url(./img/mainButtonMinesweeper.png);
+    width: 187px;
+    height: 159px;
+}
+
+
+@media screen and (max-width: 950px) {
+    .main_illust {
+        width: 720px;
+    }
+
+}
+
+@media screen and (max-width: 720px) {
+    .fixed_logo{
+        display: none;
+    }
+    .main_illust {
+        margin: 0;
+        width: auto;
+        height: auto;
+        background-image: none;
+    }
+    .main_text{
+        display: none;
+    }
+    .mobile_top{
+        display: block;
+        padding-top: 200px;
+        background-image: url(./img/mobileMainHeader.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    .mobile_top .logo{
+        margin: 0 auto;
+    }
+    .mobile_top .top_text{
+        margin-top: 30px;
+        color: #fff;
+        font-weight: 100;
+        font-size: 16px;
+        text-align: center;
+        line-height: 1.5;
+    }
+    .mobile_top .top_text:after{
+        display: block;
+        content: '';
+        width: 12px;
+        height: 6px;
+        background-image: url(./img/mobileArrowDown.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin: 30px auto 40px auto;
+    }
+
+    .main_illust .game_sec {
+        position: static;
+        box-sizing: border-box;
+        margin: 30px;
+        animation-name: none;
+        border-radius: 30px;
+        overflow: hidden;
+    }
+    .text{
+        display:none;
+    }
+    .game_sec a {
+        width: 100%;
+        height: 160px;
+        background-size: cover;
+        background-position: center bottom;
+    }
+
+
+    .thanks a {
+        background-image: url(./img/mobileMainButtonThanks.png);
+    }
+
+    .fortune a {
+        background-image: url(./img/mobileMainButtonFourtune.png);
+    }
+
+    .pumpkin a {
+        background-image: url(./img/mobileMainButtonPumpkin.png);
+    }
+
+    .card a {
+        background-image: url(./img/mobileMainButtonCardmatch.png);
+    }
+
+    .mine a {
+        background-image: url(./img/mobileMainButtonMinesweeper.png);
+    }
+    
+    footer{
+        margin-top: 100px;
+    }
+
+}
