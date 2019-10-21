@@ -44,8 +44,52 @@
 .game_section{
     width: 950px;
     height: 732px;
-    background:grey;
-    margin: 0 auto;
+    background-image: url(./img/CardGameBoard.png);
+    background-size: contain;
+    margin: 135px auto 100px auto;
+    position: relative;
+}
+
+.time{
+    width: 72px;
+    height: 56px;
+    background-image: url(./img/cardTimerFace.png);
+    background-size: contain;
+    position: absolute;
+    top: -20px;
+    left: 50px;
+    text-align: center;
+}
+
+.deco{
+    background-size: contain;
+    position: absolute;
+}
+
+.deco1{
+    
+    bottom: 0;
+    left: 0;
+    width: 240px;
+    height: 168px;
+    
+    background-image: url(./img/cardObjLeft.png);
+}
+
+.deco2{
+    width: 204px;
+    height: 210px;
+    background-image: url(./img/cardObjRightTop.png);
+    top: -50px;
+    right: 0;
+}
+
+.deco3{
+    width: 92px;
+    height: 204px;
+    background-image: url(./img/cardObjRightBottom.png);
+    right: 0;
+    bottom: 0;
 }
 
 .cards{
@@ -60,15 +104,31 @@
     .game_section{
         width: 720px;
         height: 556px;
+        margin: 200px auto 200px auto;
     }
     .cards{
         padding-top: 53px;
+    }
+    .deco1{
+        bottom: -100px;
+    }
+    .deco2{
+        top: -180px;
+    }
+    .deco3{
+        bottom: -80px;
+        right: 20px;
     }
 }
 
 @media screen and (max-width: 720px) {
     .game_section{
         width: 100%;
+        height: 100vh;
+        margin: 110px auto 0 auto;
+        background-size: 720px 560px;
+        background-position: center top;
+        background-repeat: no-repeat;
     }
 
     .card{
@@ -80,6 +140,42 @@
     }
 
     .fixed_logo{
+        top: 30px;
+        left: 30px;
+    }
+    .logo{
+        width: 30px;
+        height: 30px;
+        background-image: url(../common/img/moblileLogo@2x.png);
+    }
+
+    .time{
+        position: fixed;
+        width:48px;
+        height: 38px;
+        top: 30px;
+        right: 30px;
+        left: initial;
+        z-index: 333;
+    }
+    .deco{
+        position: fixed;
+    }
+    .deco2{
         display: none;
+    }
+    .deco1{
+        bottom: -50px;
+    }
+    .deco3{
+        bottom: -50px;
+    }
+
+    .cards{
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        margin: 0 auto;
+        text-align: center;
     }
 }
