@@ -1,10 +1,12 @@
-.mobile_top{
+.mobile_top {
     display: none;
 }
+
 .main_illust {
     width: 924px;
     height: 618px;
     background-image: url(./img/mainBackground.png);
+    
     background-size: contain;
     margin: 50px auto;
     position: relative;
@@ -17,7 +19,7 @@
     animation-iteration-count: infinite;
 }
 
-.main_text{
+.main_text {
     padding: 16px 28px;
     background-color: #fff;
     border-radius: 30px;
@@ -62,7 +64,8 @@
     transition: all .5s ease;
 }
 
-.text:after,.main_text:after {
+.text:after,
+.main_text:after {
     content: '';
     width: 50px;
     height: 50px;
@@ -91,7 +94,6 @@
 }
 
 .fortune {
-
     top: 305px;
     left: 155px;
 }
@@ -141,36 +143,115 @@
 
 
 @media screen and (max-width: 950px) {
+    .main_text {
+        padding: 14px 21px;
+        background-color: #fff;
+        border-radius: 30px;
+        display: inline-block;
+        top: 0;
+        left: 300px;
+        position: absolute;
+        text-align: center;
+        line-height: 1.5;
+    }
+    
     .main_illust {
         width: 720px;
+        height: 482px;
     }
+
+
+    .thanks {
+        top: 276px;
+        left: 10px;
+    }
+
+    .thanks a {
+        width: 80px;
+        height: 80px;
+        background-image: url(./img/mainButtonThanks.png);
+    }
+
+    .fortune {
+        top: 237px;
+        left: 120px;
+    }
+
+    .fortune a {
+        background-image: url(./img/mainButtonFortune.png);
+        width: 96px;
+        height: 98px;
+    }
+
+    .pumpkin {
+        top: 292px;
+        left: 240px;
+    }
+
+    .pumpkin a {
+        background-image: url(./img/mainButtonPumpkin.png);
+        width: 96px;
+        height: 96px;
+    }
+
+    .card {
+        top: 143px;
+        left: 356px;
+    }
+
+    .card a {
+        background-image: url(./img/mainCardmatch.png);
+        width: 144px;
+        height: 194px;
+    }
+
+    .card .text {
+        top: -300px;
+    }
+
+    .mine {
+        top: 256px;
+        left: 504px;
+    }
+
+    .mine a {
+        background-image: url(./img/mainButtonMinesweeper.png);
+        width: 146px;
+        height: 124px;
+    }
+
 
 }
 
 @media screen and (max-width: 720px) {
-    .fixed_logo{
+    .fixed_logo {
         display: none;
     }
+
     .main_illust {
         margin: 0;
         width: auto;
         height: auto;
         background-image: none;
     }
-    .main_text{
+
+    .main_text {
         display: none;
     }
-    .mobile_top{
+
+    .mobile_top {
         display: block;
         padding-top: 200px;
         background-image: url(./img/mobileMainHeader.png);
         background-size: contain;
         background-repeat: no-repeat;
     }
-    .mobile_top .logo{
+
+    .mobile_top .logo {
         margin: 0 auto;
     }
-    .mobile_top .top_text{
+
+    .mobile_top .top_text {
         margin-top: 30px;
         color: #fff;
         font-weight: 100;
@@ -178,7 +259,8 @@
         text-align: center;
         line-height: 1.5;
     }
-    .mobile_top .top_text:after{
+
+    .mobile_top .top_text:after {
         display: block;
         content: '';
         width: 12px;
@@ -197,9 +279,11 @@
         border-radius: 30px;
         overflow: hidden;
     }
-    .text{
-        display:none;
+
+    .text {
+        display: none;
     }
+
     .game_sec a {
         width: 100%;
         height: 160px;
@@ -227,8 +311,8 @@
     .mine a {
         background-image: url(./img/mobileMainButtonMinesweeper.png);
     }
-    
-    footer{
+
+    footer {
         margin-top: 100px;
     }
 
