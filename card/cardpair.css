@@ -158,17 +158,15 @@
         left: initial;
         z-index: 333;
     }
-    .deco{
-        position: fixed;
-    }
+
     .deco2{
         display: none;
     }
     .deco1{
-        bottom: -50px;
+        bottom: 70px;
     }
     .deco3{
-        bottom: -50px;
+        bottom: 0;
     }
 
     .cards{
@@ -178,4 +176,6 @@
         margin: 0 auto;
         text-align: center;
     }
+
+    
 }
