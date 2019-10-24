@@ -50,7 +50,7 @@ table {
 /* 공통요소 추가 */
 
 body{
-	background-image: url(../img/bg@2x.png);
+	background-image: url(./img/bg@2x.png);
     background-size: 500px 500px;
     font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
 }
@@ -61,30 +61,4 @@ footer{
     font-size: 12px;
     text-align: center;
     padding: 0 0 10px 0;
-}
-
-.fixed_logo{
-    position: fixed;
-    top: 50px;
-    left: 50px;
-    z-index: 500;
-}
-.logo{
-    width: 100px;
-    height: 124px;
-    background-image: url(../img/logo@2x.png);
-    display: block;
-    background-size: contain;
-}
-
-.text:after{
-    content: '';
-    width: 50px;
-    height: 50px;
-    display: block;
-    position: absolute;
-    background-image: url(../img/talkTailLow.png);
-    background-size: contain;
-    left: 50%;
-    margin-left: -25px;
 }

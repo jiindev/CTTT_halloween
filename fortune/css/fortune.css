@@ -3,6 +3,7 @@
     height: 700px;
     position: relative;
     margin: 161px auto 100px auto;
+    display: none;
 }
 
 .start_page>*{
@@ -15,16 +16,17 @@
 .front_cake{
     width: 316px;
     height: 88px;
-    background-image: url(../img/fortuneFrontCakes.png);
+    background-image: url(./img/fortuneFrontCakes.png);
     z-index: 44;
     bottom: 0;
     left: 200px;
+    cursor: pointer;
 }
 
 .frame{
     width: 710px;
     height: 700px;
-    background-image: url(../img/fortuneFrame.png);
+    background-image: url(./img/fortuneFrame.png);
     z-index: 33;
 }
 
@@ -33,14 +35,14 @@
     height: 140px;
     top: -22px;
     left: 97px;
-    background-image: url(../img/fortuneFrameFace.png);
+    background-image: url(./img/fortuneFrameFace.png);
     z-index: 44;
 }
 
 .fortune_cake{
     width: 132px;
     height: 84px;
-    background-image: url(../img/fortuneCakeCover.png);
+    background-image: url(./img/fortuneCakeCover.png);
     top: 490px;
     left: 246px;
     z-index: 44;
@@ -49,7 +51,7 @@
 .bg{
     width: 602px;
     height: 598px;
-    background-image: url(../img/fortuneBG.png);
+    background-image: url(./img/fortuneBG.png);
     left: 66px;
     top: 85px;
 }
@@ -57,9 +59,52 @@
 .monsters{
     width: 520px;
     height: 400px;
-    background-image: url(../img/fortuneMonster.png);
+    background-image: url(./img/fortuneMonster.png);
     z-index: 30;
     bottom: 0;
     left: 100px;
 }
 
+
+.text{
+    padding: 16px 34px;
+    background-color: #fff;
+    position: absolute;
+    z-index: 55;
+    border-radius: 30px;
+}
+
+.text1{
+    top: 180px;
+    left: 100px;
+}
+.text2{
+    top: 400px;
+    left: 390px;
+}
+
+.cake_page{
+    width: 620px;
+    height: 646px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.cake_page>*{
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.plate{
+    background-image: url(./img/fortuneDish.png);
+    width: 620px;
+    height: 646px;
+    top: 0;
+    left: 0;
+}
+
+.full_cake{
+    background-image: url(./img/);
+}
