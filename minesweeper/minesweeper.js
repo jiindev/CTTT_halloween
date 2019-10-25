@@ -11,67 +11,67 @@ let code = {
     mine: 1,
     normal: 0
 }
-let hor,ver,mine;
+let hor, ver, mine;
 
 //1라운드 시작
-let stage=1;
+let stage = 1;
 showModal(stage);
 
 //각 스테이지마다 나오는 모달창 애니메이션
-function showModal(stage){
+
+function showModal(stage) {
     let modal_back = document.querySelector('.modal_back');
     let modal = document.querySelector('.modal');
-    document.querySelector('.modal_back').style.display='block';
-    modal.children[stage-1].classList.add('show');
-    modal.children[stage-1].classList.add('show');
+    document.querySelector('.modal_back').style.display = 'block';
+    modal.children[stage - 1].classList.add('show');
+    modal.children[stage - 1].classList.add('show');
     modal.classList.remove('bounceOutUp');
     modal.classList.add('bounceInDown');
     modal_back.classList.remove('fadeOut');
     modal_back.classList.add('fadeIn');
-    document.querySelector('.go_btn').addEventListener('click',function(){
+    document.querySelector('.go_btn').addEventListener('click', function () {
         setting();
         modal.classList.remove('bounceInDown');
         modal.classList.add('bounceOutUp');
         modal_back.classList.remove('fadeIn');
         modal_back.classList.add('fadeOut');
-        setTimeout(function(){
-            modal_back.style.display='none';
-            modal.children[stage-1].classList.remove('show');
-        },1000)
+        setTimeout(function () {
+            modal_back.style.display = 'none';
+            modal.children[stage - 1].classList.remove('show');
+        }, 1000)
     })
 }
 
 
 
 //지뢰찾기 세팅
-function setting(){
+function setting() {
     //내부 먼저 초기화
     let clear = false;
     openSqr = 0;
     stopFlag = false;
     tbody.innerHTML = '';
     dataset = [];
-    document.querySelector('#result').textContent = '';
     //스테이지 별 난이도 조절
-    if(stage===1){
+    if (stage === 1) {
         hor = 9;
         ver = 9;
         mine = 10;
-    }else if(stage===2){
+    } else if (stage === 2) {
         hor = 9;
         ver = 28;
-        mine = 40;
-    }else if(stage===3){
+        mine = 30;
+    } else if (stage === 3) {
         hor = 9;
         ver = 52;
-        mine = 99;
+        mine = 50;
     }
 
     let flagNum = 0;
-    
+
     document.querySelector('.face').style.backgroundImage = "url('./img/DDfaceNormal@2x.png')";
-    document.querySelector('.mine_num').textContent=mine;
-    document.querySelector('.time').textContent='000';
+    document.querySelector('.mine_num').textContent = mine;
+    document.querySelector('.time').textContent = '000';
     //지뢰의 위치 뽑기
     let num_list = Array(hor * ver)
         .fill()
@@ -129,15 +129,15 @@ function setting(){
                         dataset[tdY][tdX] = code.normal;
                     }
                 }
-                document.querySelector('.mine_num').textContent = mine-flagNum;
+                document.querySelector('.mine_num').textContent = mine - flagNum;
             });
-            td.addEventListener('mousedown',function(e){
+            td.addEventListener('mousedown', function (e) {
                 let parentTr = e.currentTarget.parentNode;
                 let parentTbody = e.currentTarget.parentNode.parentNode;
                 let tdX = Array.prototype.indexOf.call(parentTr.children, e.currentTarget);
                 let tdY = Array.prototype.indexOf.call(parentTbody.children, parentTr);
-                if(dataset[tdY][tdX]!==code.open){
-                    if(stopFlag===false){
+                if (dataset[tdY][tdX] !== code.open) {
+                    if (stopFlag === false) {
                         document.querySelector('.face').style.backgroundImage = "url('./img/DDfaceMouseDown@2x.png')";
                     }
                 }
@@ -157,13 +157,25 @@ function setting(){
                 e.currentTarget.classList.add('opened');
                 //실패
                 if (dataset[tdY][tdX] === code.mine) {
-                    document.querySelector('#result').textContent = 'FAIL!'; 
-                    let button = document.createElement('button');
-                    button.id = 'exec';
-                    button.textContent='다시하기';
-                    document.querySelector('#result').appendChild(button);
-                    document.querySelector('#exec').addEventListener('click', function () {
+                    let restart_button = document.querySelector('.restart');
+                    let modal_back = document.querySelector('.modal_back');
+                    modal_back.classList.remove('fadeOut');
+                    modal_back.classList.add('fadeIn');
+                    restart_button.style.display = 'block';
+                    modal_back.style.display = 'block';
+                    restart_button.addEventListener('click', function () {
+                        restart_button.classList.remove('bounceInDown');
+                        restart_button.classList.add('bounceOutUp');
                         setting();
+                        modal_back.classList.remove('fadeIn');
+                        modal_back.classList.add('fadeOut');
+                        setTimeout(function () {
+                            modal_back.style.display = 'none';
+                            restart_button.classList.remove('bounceOutUp');
+                            restart_button.classList.add('bounceInDown');
+                            restart_button.style.display = 'none';
+                        }, 1000)
+                        window.scrollTo(0, 0);
                     });
                     stopFlag = true;
                     for (let i = 0; i < dataset.length; i++) {
@@ -175,7 +187,7 @@ function setting(){
                     }
                     document.querySelector('.face').style.backgroundImage = "url('./img/DDfaceGameOver@2x.png')";
                     e.currentTarget.style.backgroundImage = "url('./img/ghostSelect1@2x.png')";
-                    
+
                 } else {
                     document.querySelector('.face').style.backgroundImage = "url('./img/DDfaceNormal@2x.png')";
                     openSqr++;
@@ -231,7 +243,7 @@ function setting(){
                 if (openSqr === hor * ver - mine) {
                     stopFlag = true;
                     //한번만 실행되도록
-                    if(clear==false){
+                    if (clear == false) {
                         stage++;
                         clear = true;
                     }
@@ -258,21 +270,37 @@ function setting(){
     let timeCount = setInterval(function () {
         if (stopFlag === false) {
             let now_time = parseInt((new Date() - start_time) / 1000);
-            if(now_time<10){
-                document.querySelector('.time').textContent = '00'+now_time;
-            }else if(now_time<100){
-                document.querySelector('.time').textContent = '0'+now_time;
-            }else{
+            if (now_time < 10) {
+                document.querySelector('.time').textContent = '00' + now_time;
+            } else if (now_time < 100) {
+                document.querySelector('.time').textContent = '0' + now_time;
+            } else {
                 document.querySelector('.time').textContent = now_time;
             }
         }
-        if(stopFlag === true){
+        if (stopFlag === true) {
             clearInterval(timeCount);
         }
     }, 1000);
-
-    
 }
 
 
+//스크롤하면 상단에 점수, 시간 표기
+let scrollPosition = window.scrollY;
+let time = document.querySelector('.time');
+let mine_num = document.querySelector('.mine_num');
+let time_position = time.getBoundingClientRect().bottom + 50;
 
+window.onscroll = function(){
+    if(window.pageYOffset > time_position){
+        mine_num.classList.add('animated','bounceInDown');
+        time.classList.add('animated','bounceInDown');
+        mine_num.classList.add('scrolled');
+        time.classList.add('scrolled');
+    }else{
+        mine_num.classList.remove('scrolled');
+        time.classList.remove('scrolled');
+        mine_num.classList.remove('animated','bounceInDown');
+        time.classList.remove('animated','bounceInDown');
+    }
+}

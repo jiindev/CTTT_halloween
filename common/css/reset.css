@@ -88,3 +88,11 @@ footer{
     left: 50%;
     margin-left: -25px;
 }
+
+button:focus {
+    outline: none;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }

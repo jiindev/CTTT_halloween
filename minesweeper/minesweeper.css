@@ -9,6 +9,22 @@ body{
     margin: 0;
     padding: 0;
 }
+
+.restart{
+    position: fixed;
+    width: 164px;
+    height: 140px;
+    top: 50%;
+    left: 50%;
+    margin-top: -70px;
+    margin-left: -82px;
+    background-image: url(../common/img/fortuneAgainButton.png);
+    background-size: contain;
+    z-index: 999999;
+    background-color: transparent;
+    border: 0;
+    display: none;
+}
 .modal{
     background-color: #000;
     position: fixed;
@@ -28,6 +44,7 @@ body{
     left: 0;
     width: 100%;
     height: 100%;
+    z-index: 450;
 }
 .modal .illust{
     width: 250px;
@@ -63,16 +80,9 @@ body{
     position: relative;
     margin-bottom: 40px;
 }
-.modal .tail{
-    position: absolute;
-    width: 50px;
-    height: 50px;
+.text:after{
     background-image: url(./img/tail@2x.png);
-    background-size: contain;
-    display: block;
     top: -50px;
-    left: 50%;
-    margin-left:-25px;
 }
 .modal .go_btn{
     width: 82px;
@@ -118,6 +128,18 @@ body{
     font-weight: bold;
     color: #C13C3C;
 }
+.time.scrolled{
+    width: 80px;
+    height: 38px;
+    background-image: url(./img/mobileButtonTopTime@2x.png);
+    background-size: contain;
+    position: fixed;
+    left: initial;
+    top: 30px;
+    right: 120px;
+    line-height: 35px;
+    z-index: 400;
+}
 .mine_num{
     width: 100px;
     height: 120px;
@@ -130,6 +152,18 @@ body{
     font-size: 20px;
     font-weight: bold;
     color: #3C3CC1;
+}
+.mine_num.scrolled{
+    width: 80px;
+    height: 38px;
+    background-image: url(./img/mobileButtonTopGhost@2x.png);
+    background-size: contain;
+    position: fixed;
+    left: initial;
+    top: 30px;
+    right: 30px;
+    line-height: 35px;
+    z-index: 400;
 }
 .face{
     width: 260px;

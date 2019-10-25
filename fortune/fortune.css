@@ -1,16 +1,4 @@
-.fork{
-    width: 244px;
-    height: 315px;
-    top: 50%;
-    left: 50%;
-    background-image: url(./img/fortuneMouse.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    z-index: 5555;
-    position: fixed;
-    display: none;
-    opacity: 0;
-}
+@import url('https://fonts.googleapis.com/css?family=Nanum+Pen+Script&display=swap');
 
 .start_page {
     width: 710px;
@@ -60,6 +48,7 @@
     top: 490px;
     left: 246px;
     z-index: 44;
+    cursor: pointer;
 }
 
 .bg {
@@ -98,6 +87,17 @@
     left: 390px;
 }
 
+.text3{
+    top: 40px;
+    left: 182px;
+}
+
+.text4{
+    top: 157px;
+    left: 179px;
+    display: none;
+}
+
 .cake_page{
     width: 710px;
     height: 700px;
@@ -108,7 +108,7 @@
 .cake_wrap {
     width: 620px;
     height: 646px;
-    position: relative;
+    position: relative !important;
     margin: 27px auto;
     
 }
@@ -120,6 +120,8 @@
     background-position: center center;
 }
 
+
+
 .plate {
     background-image: url(./img/fortuneDish.png);
     width: 620px;
@@ -129,14 +131,29 @@
     z-index: 1;
 }
 
+.cake{
+    cursor: pointer;
+}
+
 .full_cake {
     width: 360px;
     height: 360px;
-    background-image: url(./img/fortuneCakeA.png);
-    z-index: 4;
+    background-image: url(./img/fortuneCake0.png);
+    z-index: 6;
     top: 143px;
     left: 133px;
     display: block;
+}
+
+.fork{
+    width: 244px;
+    height: 315px;
+    top: 120px;
+    left: 380px;
+    background-image: url(./img/fortuneMouse.png);
+    z-index: 2;
+    position: absolute;
+    display: none;
 }
 
 .cherry {
@@ -144,8 +161,8 @@
     height: 360px;
     top: 143px;
     left: 133px;
-    background-image: url(./img/fortuneCakeACherry.png);
-    z-index: 6;
+    background-image: url(./img/fortuneCake0Cherry.png);
+    z-index: 7;
     pointer-events: none;
     transition: all .5s ease;
 }
@@ -156,7 +173,7 @@
     height: 360px;
     top: 143px;
     left: 133px;
-    background-image: url(./img/fortuneCakeALeft.png);
+    background-image: url(./img/fortuneCake0Left.png);
     z-index: 3;
     transition: all .5s ease;
 }
@@ -166,7 +183,7 @@
     height: 360px;
     top: 143px;
     left: 133px;
-    background-image: url(./img/fortuneCakeARight.png);
+    background-image: url(./img/fortuneCake0Right.png);
     z-index: 5;
     transition: all .5s ease;
 }
@@ -184,7 +201,7 @@
 .paper{
     width: 112px;
     height: 104px;
-    top: 300px;
+    top: 263px;
     left: 180px;
     background-image: url(./img/fortunePaperFold.png);
     z-index: 4;
@@ -197,9 +214,13 @@
     width: 304px;
     height: 294px;
     background-image: url(./img/fortuneBGTissue.png);
-    bottom: -100px;
+    bottom: -50px;
     left: -30px;
     z-index: 0;
+}
+
+.fortune_result{
+    display: none;
 }
 
 .result{
@@ -209,14 +230,26 @@
     top: 261px;
     left: 72px;
     z-index: 10;
-    opacity: 0;
-    display: none;
-    transition: all .2s ease;
 }
 
 .quote{
-    font-size: 18px;
+    font-family: 'Nanum Pen Script', cursive;
+    font-size: 20px;
+    color: #3603A2;
     text-align: center;
     margin-top:40px;
     width: 100%;
+    line-height: 1.5;
+}
+
+.restart{
+    top: 435px;
+    left: 269px;
+    background-image: url(./img/fortuneAgainButton.png);
+    width: 82px;
+    height: 70px;
+    z-index: 10;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
 }
