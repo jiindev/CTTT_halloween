@@ -51,6 +51,43 @@ table {
 	border-spacing: 0;
 }
 
+
+/* =====================================
+            GRID SYSTEM
+===================================== */
+.clearfix:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+.center {
+	max-width: 1280px;
+	margin: 0 auto;
+}
+[class*="col-"] {
+	width: 100%;
+	float: left;
+	box-sizing: border-box;
+	padding: 0 10px;
+}
+@media (min-width:768px){
+	.col-1  {width: 8.33%; }
+	.col-2  {width: 16.66%;}
+	.col-3  {width: 25%;}
+	.col-4  {width: 33.33%;}
+	.col-5  {width: 41.66%;}
+	.col-6  {width: 50%;}
+	.col-7  {width: 58.33%;}
+	.col-8  {width: 66.66%;}
+	.col-9  {width: 75%;}
+	.col-10 {width: 83.33%;}
+	.col-11 {width: 91.66%;}
+	.col-12 {width: 100%;}
+}
+.col-fit {padding: 0;}
+.col-right {float: right;}
+
+
 /* 공통요소 추가 */
 
 body{
@@ -142,4 +179,18 @@ button:focus {
   @keyframes fadeout {
     from {bottom: 30px; opacity: 1;}
     to {bottom: 0; opacity: 0;}
+  }
+
+
+  @media screen and (max-width: 720px) {
+    .fixed_logo{
+        top: 30px;
+        left: 30px;
+    }
+    .logo{
+        width: 30px;
+        height: 30px;
+        background-image: url(../img/moblileLogo@2x.png);
+    }
+
   }
