@@ -18,18 +18,22 @@ body{
     left: 50%;
     margin-top: -70px;
     margin-left: -82px;
-    background-image: url(../common/img/fortuneAgainButton.png);
+    background-image: url(./img/mindsweeperButtonAgain.png);
     background-size: contain;
     z-index: 999999;
     background-color: transparent;
     border: 0;
     display: none;
 }
+
+.restart:hover, .restart:active{
+    background-image: url(./img/mindsweeperButtonAgain_hover.png);
+}
 .modal{
     background-color: #000;
     position: fixed;
     z-index: 800;
-    top: 100px;
+    top: 50px;
     width: 600px;
     height: 700px;
     left:50%;
@@ -53,7 +57,7 @@ body{
     margin: 50px auto 80px auto;
 }
 .start_page .illust{
-    background-image: url(./img/frameDDgame1@2x.png);
+    background-image: url(./img/mindsweeper_modal1.png);
 }
 .modal>div{
     display: none;
@@ -61,24 +65,34 @@ body{
 .modal>div.show{
     display: block;
 }
-.stage_two .illust,.stage_three .illust{
-    background-image: url(./img/frameDDgame2@2x.png);
+.stage_two .illust{
+    background-image: url(./img/mindsweeper_modal2.png);
+}
+.stage_three .illust{
+    background-image: url(./img/mindsweeper_modal3.png);
 }
 .finish .illust{
-    background-image: url(./img/frameDDgame3@2x.png);
+    background-image: url(./img/mindsweeper_modal4.png);
 }
 
-.modal p{
+.modal p.talking{
     background-color: #fff;
     padding: 20px 30px;
     max-width: 390px;
-    border-radius: 100px;
+    border-radius: 30px;
     margin: 0 auto;
     text-align: center;
+}
+.modal p.narration{
+    color: #fff;
+    margin: 20px auto;
+    text-align: center;
+    font-weight: 100;
 }
 .modal .text{
     position: relative;
     margin-bottom: 40px;
+    line-height: 1.5;
 }
 .text:after{
     background-image: url(./img/tail@2x.png);
@@ -253,15 +267,44 @@ td{
     background-image: url(./img/normal1@2x.png);
     background-size: cover;
 }
+
 td.opened{
     background-image: url(./img/opened@2x.png);
 }
+
 td.qst{
     background-image: url(./img/qst1@2x.png);
 }
 td.flag{
     background-image: url(./img/flag@2x.png);
 }
+
+
+.stage-2 td{
+    background-image: url(./img/normal2@2x.png);
+}
+
+.stage-2 td.qst{
+    background-image: url(./img/qst2@2x.png);
+}
+
+.stage-2 td.flag{
+    background-image: url(./img/flag2@2x.png);
+}
+
+.stage-3 td{
+    background-image: url(./img/normal3@2x.png);
+}
+
+.stage-3 td.qst{
+    background-image: url(./img/qst3@2x.png);
+}
+
+.stage-3 td.flag{
+    background-image: url(./img/flag3@2x.png);
+}
+
+
 #result{
     font-size: 36px;
     padding: 10px 0;
@@ -294,7 +337,7 @@ td.flag{
     .modal .illust{
         margin-top: 100px;
     }
-    .modal p{
+    .modal p.talking{
         background-color: #fff;
         padding: 20px 0;
         width: 100%;

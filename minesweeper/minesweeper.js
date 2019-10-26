@@ -29,6 +29,11 @@ function showModal(stage) {
     modal.classList.add('bounceInDown');
     modal_back.classList.remove('fadeOut');
     modal_back.classList.add('fadeIn');
+    if(stage===4){
+        minesweeperClear();
+        document.querySelector('.go_btn').style.backgroundImage="url('./img/mindsweeperButtonAgain_small.png')";
+        document.querySelector('.go_btn').innerHTML='';
+    }
     document.querySelector('.go_btn').addEventListener('click', function () {
         setting();
         modal.classList.remove('bounceInDown');
@@ -38,11 +43,25 @@ function showModal(stage) {
         setTimeout(function () {
             modal_back.style.display = 'none';
             modal.children[stage - 1].classList.remove('show');
+            document.querySelector('.go_btn').style.backgroundImage="url('./img/nextButton@2x.png')";
+            document.querySelector('.go_btn').innerHTML='GO!';
         }, 1000)
     })
 }
 
-
+//최초 클리어 시 스낵바 & 키 셋팅
+function minesweeperClear() {
+    let minesweeper_clear = getCookie('minesweeper');
+    if(!minesweeper_clear){
+        setCookie('minesweeper','true', 365);
+        document.querySelector('#snackbar').innerHTML='이야깃거리 <bold>[유령 피해다니기]</bold>가 생겼습니다!';
+        var snackbar = document.getElementById("snackbar");
+        snackbar.className = "show";
+        setTimeout(function () {
+            snackbar.className = snackbar.className.replace("show", "");
+        }, 3000);
+    }
+}
 
 //지뢰찾기 세팅
 function setting() {
@@ -53,6 +72,7 @@ function setting() {
     tbody.innerHTML = '';
     dataset = [];
     //스테이지 별 난이도 조절
+    if(stage===4) stage=1;
     if (stage === 1) {
         hor = 9;
         ver = 9;
@@ -85,6 +105,7 @@ function setting() {
     }
 
     //지뢰 테이블 만들기
+    document.querySelector('#table').classList.add('stage-' + stage);
     for (let i = 0; i < ver; i++) {
         let arr = [];
         let tr = document.createElement('tr');
@@ -122,7 +143,6 @@ function setting() {
                 } else if (dataset[tdY][tdX] === code.qst || dataset[tdY][tdX] === code.qstmine) {
                     e.currentTarget.classList.remove('qst');
                     if (dataset[tdY][tdX] === code.qstmine) {
-                        // e.currentTarget.textContent = 'X';
                         dataset[tdY][tdX] = code.mine;
                     } else {
                         e.currentTarget.textContent = '';
@@ -181,12 +201,12 @@ function setting() {
                     for (let i = 0; i < dataset.length; i++) {
                         for (let j = 0; j < dataset[i].length; j++) {
                             if (dataset[i][j] === code.mine) {
-                                tbody.children[i].children[j].style.backgroundImage = "url('./img/ghost1@2x.png')";
+                                tbody.children[i].children[j].style.backgroundImage = "url('./img/ghost" + stage + "@2x.png')";
                             }
                         }
                     }
                     document.querySelector('.face').style.backgroundImage = "url('./img/DDfaceGameOver@2x.png')";
-                    e.currentTarget.style.backgroundImage = "url('./img/ghostSelect1@2x.png')";
+                    e.currentTarget.style.backgroundImage = "url('./img/ghostSelect" + stage + "@2x.png')";
 
                 } else {
                     document.querySelector('.face').style.backgroundImage = "url('./img/DDfaceNormal@2x.png')";
@@ -244,6 +264,7 @@ function setting() {
                     stopFlag = true;
                     //한번만 실행되도록
                     if (clear == false) {
+                        document.querySelector('#table').classList.remove('stage-' + stage);
                         stage++;
                         clear = true;
                     }
@@ -291,16 +312,16 @@ let time = document.querySelector('.time');
 let mine_num = document.querySelector('.mine_num');
 let time_position = time.getBoundingClientRect().bottom + 50;
 
-window.onscroll = function(){
-    if(window.pageYOffset > time_position){
-        mine_num.classList.add('animated','bounceInDown');
-        time.classList.add('animated','bounceInDown');
+window.onscroll = function () {
+    if (window.pageYOffset > time_position) {
+        mine_num.classList.add('animated', 'bounceInDown');
+        time.classList.add('animated', 'bounceInDown');
         mine_num.classList.add('scrolled');
         time.classList.add('scrolled');
-    }else{
+    } else {
         mine_num.classList.remove('scrolled');
         time.classList.remove('scrolled');
-        mine_num.classList.remove('animated','bounceInDown');
-        time.classList.remove('animated','bounceInDown');
+        mine_num.classList.remove('animated', 'bounceInDown');
+        time.classList.remove('animated', 'bounceInDown');
     }
 }
