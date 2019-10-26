@@ -4,6 +4,21 @@ setTimeout(function () {
 }, 4000);
 let cake_index = 0;
 
+
+//최초 클리어 시 스낵바 & 키 셋팅
+function fortuneClear() {
+    let fortune_clear = getCookie('fortune');
+    if(!fortune_clear){
+        setCookie('fortune','true', 365);
+        document.querySelector('#snackbar').innerHTML='이야깃거리 <b>[행운의 케이크]</b>가 생겼습니다!';
+        var snackbar = document.getElementById("snackbar");
+        snackbar.className = "show";
+        setTimeout(function () {
+            snackbar.className = snackbar.className.replace("show", "");
+        }, 3000);
+    }
+}
+
 //start 버튼 클릭 시 사라지도록
 let start_btn = document.querySelector('.fortune_cake');
 let start_page = document.querySelector('.start_page');
@@ -42,6 +57,7 @@ cake.onclick = function () {
         result.style.display = 'block';
         paper.classList.remove('fadeInUp');
         paper.classList.add('fadeOut');
+        setTimeout(fortuneClear,2000);
     } else if (cake_cut === true) {
         text4.style.display='block';
         left_cake.classList.add('opened');

@@ -33,11 +33,12 @@ body{
     background-color: #000;
     position: fixed;
     z-index: 800;
-    top: 50px;
+    top: 50%;
     width: 600px;
     height: 700px;
     left:50%;
     margin-left:-300px;
+    margin-top: -350px;
     border-radius: 30px;
 }
 .modal_back{
@@ -331,11 +332,12 @@ td.flag{
         width: 100%;
         height: 100%;
         left:0;
+        margin: initial;
         margin-left:0;
         border-radius: 0;
     }
     .modal .illust{
-        margin-top: 100px;
+        margin: 50px auto 50px auto;
     }
     .modal p.talking{
         background-color: #fff;
@@ -345,6 +347,16 @@ td.flag{
         border-radius: 0;
         margin: 0 auto;
         text-align: center;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+    
+    .modal .go_btn{
+        position: fixed;
+        bottom: 30px;
+        left: 50%;
+        margin: initial;
+        margin-left:-41px; 
     }
 
     .top{
