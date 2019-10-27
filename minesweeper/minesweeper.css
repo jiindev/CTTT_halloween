@@ -114,13 +114,7 @@ body{
 .modal .go_btn:hover{
     background-image: url(./img/nextButtonMouseOver@2x.png);
 }
-#exec{
-    width: 70px;
-    height: 30px;
-    background-color: #000;
-    font-size: 14px;
-    color: white;
-}
+
 
 .top{
     position: relative;

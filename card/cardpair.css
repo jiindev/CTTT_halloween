@@ -1,3 +1,75 @@
+.modal{
+    background-color: #000;
+    position: fixed;
+    z-index: 800;
+    top: 50%;
+    width: 600px;
+    left:50%;
+    margin-left:-300px;
+    margin-top: -350px;
+    border-radius: 30px;
+    display: none;
+}
+.modal_back{
+    background-color: rgb(0,0,0,.5);
+    z-index: 700;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 450;
+    display: none;
+}
+.modal .illust{
+    width: 250px;
+    height: 250px;
+    background-size: contain;
+    margin: 50px auto 80px auto;
+    background-image: url(./img/cardFrameStage1clear.png);
+}
+.modal p.talking{
+    background-color: #fff;
+    padding: 20px 30px;
+    max-width: 390px;
+    border-radius: 30px;
+    margin: 0 auto;
+    text-align: center;
+}
+.modal p.narration{
+    color: #fff;
+    margin: 20px auto;
+    text-align: center;
+    font-weight: 100;
+}
+.modal .text{
+    position: relative;
+    margin-bottom: 40px;
+    line-height: 1.5;
+}
+.text:after{
+    background-image: url(./img/cardTalkTail.png);
+    top: -50px;
+}
+.modal .go_btn{
+    width: 82px;
+    height: 70px;
+    border: 0;
+    background-color: transparent;
+    background-image: url(../common/img/nextButton@2x.png);
+    background-size: contain;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 0 auto 50px auto; 
+    display: block;
+    cursor: pointer;
+}
+.modal .go_btn:hover{
+    background-image: url(../common/img/nextButtonMouseOver@2x.png);
+}
+
+
+
 .card{
     width: 96px;
     height: 112px;
@@ -13,8 +85,9 @@
     width:100%;
     height: 100%;
     text-align: center;
-    transition: transform .8s;
+    transition: transform .6s;
     transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
 }
 
 .card.flipped .card-inner{
@@ -38,6 +111,7 @@
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
     border: 0;
 }
 
@@ -59,20 +133,21 @@
     top: -20px;
     left: 50px;
     text-align: center;
+    line-height: 55px;
+    font-weight: bold;
 }
 
 .deco{
     background-size: contain;
     position: absolute;
+    pointer-events: none;
 }
 
 .deco1{
-    
     bottom: 0;
     left: 0;
     width: 240px;
     height: 168px;
-    
     background-image: url(./img/cardObjLeft.png);
 }
 
@@ -97,6 +172,19 @@
     height: 358px;
     padding-top: 120px;
     margin: 0 auto;
+    position: relative;
+    z-index: 333;
+}
+
+.stage-2.cards{
+    width: 640px;
+    height: 360px;
+}
+
+.stage-3.cards{
+    width: 640px;
+    height: 490px;
+    padding-top: 70px;
 }
 
 
@@ -119,9 +207,51 @@
         bottom: -80px;
         right: 20px;
     }
+    .stage-3.cards{
+        width: 540px;
+        padding-top: 30px;
+    }
+    .stage-3 .card{
+        width: 80px;
+        height: 94px;
+    }
+
 }
 
 @media screen and (max-width: 720px) {
+
+    .modal{
+        top: 0;
+        width: 100%;
+        height: 100%;
+        left:0;
+        margin: initial;
+        margin-left:0;
+        border-radius: 0;
+    }
+    .modal .illust{
+        margin: 50px auto 50px auto;
+    }
+    .modal .go_btn{
+        position: fixed;
+        bottom: 30px;
+        left: 50%;
+        margin: initial;
+        margin-left:-41px; 
+    }
+
+    .modal p.talking{
+        background-color: #fff;
+        padding: 20px 0;
+        width: 100%;
+        max-width: initial;
+        border-radius: 0;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
     .game_section{
         width: 100%;
         height: 100vh;
@@ -135,8 +265,24 @@
         width: 80px;
         height: 94px;
     }
+    .stage-2 .card{
+        width: 70px;
+        height: 84px;
+    }
+    .stage-3 .card{
+        width: 64px;
+        height: 78px;
+    }
+
     .cards{
-        width: 360px;
+        width: 100% !important;
+        height: 100%;
+        box-sizing: border-box;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .stage-2.cards{
+        padding-top: 14px;
     }
 
     .fixed_logo{
@@ -156,26 +302,16 @@
         top: 30px;
         right: 30px;
         left: initial;
-        z-index: 333;
+        z-index: 555;
+        line-height: 35px;
+        font-size: 14px;
     }
 
-    .deco2{
+    .deco{
         display: none;
     }
-    .deco1{
-        bottom: 70px;
-    }
-    .deco3{
-        bottom: 0;
-    }
 
-    .cards{
-        width: 100%;
-        height: 100%;
-        box-sizing: border-box;
-        margin: 0 auto;
-        text-align: center;
-    }
+    
 
     
 }
