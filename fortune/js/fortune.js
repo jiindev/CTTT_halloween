@@ -62,8 +62,8 @@ cake.onclick = function () {
         text4.style.display='block';
         left_cake.classList.add('opened');
         right_cake.classList.add('opened');
-        cherry.style.left = '280px';
-        cherry.style.top = '380px';
+        cherry.classList.remove('move1');
+        cherry.classList.add('move2');
         paper.classList.add('animated', 'fadeInUp');
         cake_open = true;
         fork.style.display = 'block';
@@ -71,9 +71,7 @@ cake.onclick = function () {
         full_cake.classList.add('animated', 'fadeOut', 'faster');
         cherry.classList.remove('infinite', 'bounce');
         setTimeout(function () {
-            cherry.style.left = '250px';
-            cherry.style.top = '350px';
-            cherry.style.transform = 'rotate(45deg)';
+            cherry.classList.add('move1');
         }, 500);
         text3.classList.add('fadeOut','faster');
         text3.classList.remove('bounceIn','delay-1s');
@@ -100,9 +98,7 @@ restart_btn.onclick = function () {
         result.style.display = 'none';
         fork.style.display = 'none';
         paper.classList.remove('fadeOut', 'animated');
-        cherry.style.left = '143px';
-        cherry.style.top = '143px';
-        cherry.style.transform = 'rotate(0deg)';
+        cherry.classList.remove('move2');
         cherry.classList.add('infinite', 'bounce');
         full_cake.classList.remove('animated', 'fadeOut', 'faster');
         left_cake.classList.remove('opened');

@@ -75,6 +75,12 @@
     position: absolute;
     z-index: 55;
     border-radius: 30px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.text br {
+    display: none;
 }
 
 .text1 {
@@ -87,30 +93,31 @@
     left: 390px;
 }
 
-.text3{
+.text3 {
     top: 40px;
     left: 182px;
 }
 
-.text4{
+.text4 {
     top: 157px;
     left: 179px;
     display: none;
 }
 
-.cake_page{
+.cake_page {
     width: 710px;
     height: 700px;
     position: relative;
     margin: 161px auto 100px auto;
     display: none;
 }
+
 .cake_wrap {
     width: 620px;
     height: 646px;
     position: relative !important;
     margin: 27px auto;
-    
+
 }
 
 .cake_page * {
@@ -131,7 +138,7 @@
     z-index: 1;
 }
 
-.cake{
+.cake {
     cursor: pointer;
 }
 
@@ -145,7 +152,7 @@
     display: block;
 }
 
-.fork{
+.fork {
     width: 244px;
     height: 315px;
     top: 120px;
@@ -165,6 +172,18 @@
     z-index: 7;
     pointer-events: none;
     transition: all .5s ease;
+}
+
+.cherry.move1 {
+    left: 250px;
+    top: 350px;
+    transform: rotate(45deg);
+}
+
+.cherry.move2 {
+    left: 280px;
+    top: 380px;
+    transform: rotate(45deg);
 }
 
 
@@ -188,17 +207,17 @@
     transition: all .5s ease;
 }
 
-.left_cake.opened{
+.left_cake.opened {
     left: 90px;
     top: 103px;
 }
 
-.right_cake.opened{
+.right_cake.opened {
     left: 170px;
     top: 183px;
 }
 
-.paper{
+.paper {
     width: 112px;
     height: 104px;
     top: 263px;
@@ -219,11 +238,11 @@
     z-index: 0;
 }
 
-.fortune_result{
+.fortune_result {
     display: none;
 }
 
-.result{
+.result {
     width: 477px;
     height: 124px;
     background-image: url(./img/fortunePaperOpen.png);
@@ -232,17 +251,17 @@
     z-index: 10;
 }
 
-.quote{
+.quote {
     font-family: 'Nanum Pen Script', cursive;
     font-size: 20px;
     color: #3603A2;
     text-align: center;
-    margin-top:40px;
+    margin-top: 40px;
     width: 100%;
     line-height: 1.5;
 }
 
-.restart{
+.restart {
     top: 435px;
     left: 269px;
     background-image: url(./img/fortuneAgainButton.png);
@@ -252,4 +271,203 @@
     background-color: transparent;
     border: none;
     cursor: pointer;
+}
+
+@media screen and (max-width: 720px) {
+
+    body{
+        width: 100%;
+        -webkit-overflow-x: hidden;
+        -moz-overflow-x: hidden;
+        -webkit-overflow-x: hidden;
+        overflow-x: hidden;
+    }
+    .start_page {
+        width: 427px;
+        height: 421px;
+        margin: 93px auto 50px auto;
+        position: relative;
+        left: 50%;
+        margin-left: -213px;
+    }
+
+    .front_cake {
+        width: 190px;
+        height: 52px;
+        z-index: 44;
+        left: 123px;
+    }
+
+    .frame {
+        width: 427px;
+        height: 421px;
+    }
+
+    .frame_face {
+        width: 310px;
+        height: 72px;
+        top: -12px;
+        left: 58px;
+    }
+
+    .fortune_cake {
+        width: 80px;
+        height: 51px;
+        top: 295px;
+        left: 142px;
+    }
+
+    .bg {
+        width: 362px;
+        height: 360px;
+        left: 45px;
+        top: 40px;
+    }
+
+    .monsters {
+        width: 312px;
+        height: 240px;
+        left: 58px;
+    }
+
+
+    .text {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .text br{
+        display: block;
+    }
+
+    .text1 {
+        top: 110px;
+        left: 43px;
+    }
+
+    .text2 {
+        top: 238px;
+        left: 232px;
+    }
+
+    .text3 {
+        top: -19px;
+        left: 80px;
+    }
+
+    .text4 {
+        top: 19px;
+        left: 96px;
+    }
+
+    .cake_page {
+        width: 427px;
+        height: 421px;
+        margin: 93px auto 50px auto;
+        position: relative;
+        left: 50%;
+        margin-left: -213px;
+    }
+
+    .cake_wrap {
+        width: 340px;
+        height: 356px;
+        margin: 50px auto;
+
+    }
+
+
+    .plate {
+        background-image: url(./img/fortuneDish.png);
+        width: 340px;
+        height: 356px;
+    }
+
+    .full_cake {
+        width: 198px;
+        height: 198px;
+        top: 78px;
+        left: 71px;
+    }
+
+    .fork {
+        display: none !important;
+    }
+
+    .cherry {
+        width: 198px;
+        height: 198px;
+        top: 78px;
+        left: 71px;
+    }
+
+    .cherry.move1 {
+        top: 190px;
+        left: 110px;
+        transform: rotate(45deg);
+    }
+
+    .cherry.move2 {
+        top: 210px;
+        left: 130px;
+        transform: rotate(45deg);
+    }
+
+
+    .left_cake {
+        width: 198px;
+        height: 198px;
+        top: 78px;
+        left: 71px;
+    }
+
+    .right_cake {
+        width: 198px;
+        height: 198px;
+        top: 78px;
+        left: 71px;
+    }
+
+    .left_cake.opened {
+        left: 47px;
+        top: 50px;
+    }
+
+    .right_cake.opened {
+        left: 100px;
+        top: 92px;
+    }
+
+    .paper {
+        width: 80px;
+        height: 74px;
+        top: 119px;
+        left: 107px;
+    }
+
+
+    .tissue {
+        display: none;
+    }
+
+    .fortune_result {
+        display: none;
+    }
+
+    .result {
+        top: 116px;
+        left: -54px;
+    }
+
+  
+    .restart {
+        top: 291px;
+        left: 129px;
+    }
+    footer{
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+    }
 }

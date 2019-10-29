@@ -20,7 +20,7 @@ function staging() {
         card_num = 18;
     }
     if (stage >= 3) {
-        colors = colors.concat(['url("./img/cardStage3a.png")', 'url("./img/cardStage3a.png")', 'url("./img/cardStage3b.png")', 'url("./img/cardStage3b.png")', 'url("./img/cardStage3c.png")', 'url("./img/cardStage3c.png")', 'url("./img/cardStage3d.png")', 'url("./img/cardStage3d.png")']);
+        colors = colors.concat(['url("./img/cardStage3a.png")', 'url("./img/cardStage3a.png")', 'url("./img/cardStage3b.png")', 'url("./img/cardStage3b.png")', 'url("./img/cardStage3c.png")', 'url("./img/cardStage3c.png")']);
         card_num = 24;
     }
 }
@@ -36,7 +36,7 @@ function showModal() {
         if(timeScore<=10||timeScore===undefined){
             document.querySelector('.illust').style.backgroundImage = "url('./img/cardFrameStage1clear.png')";
             document.querySelector('.talking').innerHTML = timeScore+'초만에 게임을 다 하다니 성격이 급하구나. <br>내 카드까지 더한다면 더 재미있을거야.';
-        }else if(timeScore<=15){
+        }else if(timeScore<=30){
             document.querySelector('.illust').style.backgroundImage = "url('./img/cardFrameStage1clear.png')";
             document.querySelector('.talking').innerHTML = timeScore+'초만에 게임을 다 하다니 중타구나. <br>내 카드까지 더한다면 더 재미있을거야.';
         }else{
@@ -50,7 +50,7 @@ function showModal() {
         if(timeScore<=20){
             document.querySelector('.illust').style.backgroundImage = "url('./img/cardFrameStage2clear.png')";
             document.querySelector('.talking').innerHTML = '이걸 끝내는데 '+timeScore+'초밖에 걸리지 않았다고? <br>어느새 카드뒤집기 고수가 되었군. <br>나로 말할 것 같으면 카드뒤집기 전문가지, 나도 끼워줘!';
-        }else if(timeScore<=30){
+        }else if(timeScore<=50){
             document.querySelector('.illust').style.backgroundImage = "url('./img/cardFrameStage2clear.png')";
             document.querySelector('.talking').innerHTML = '이걸 끝내는 데에 '+timeScore+'초가 걸리다니... <br>그럭저럭 쓸 만한 인재로군.. <br>과연 카드를 더 많이 가져와도 해낼 수 있을까?';
         }else{
@@ -61,21 +61,21 @@ function showModal() {
             stage=2;
         }
     }  else if (stage === 4) {
-        if(timeScore<=30){
+        if(timeScore<=35){
             document.querySelector('.illust').style.backgroundImage = "url('./img/cardFrameStage3clear.png')";
-            document.querySelector('.talking').innerHTML = timeScore+'a초만에 짝을 다 맞추다니! 언블리버블! <br>카드맞추기 챔피언이 나타났다!! <br>수군수군.. 수군수군..';
+            document.querySelector('.talking').innerHTML = timeScore+'초만에 짝을 다 맞추다니! 언블리버블! <br>카드맞추기 챔피언이 나타났다!! <br>수군수군.. 수군수군..';
             document.querySelector('.narration').innerHTML='축하합니다! 당신은 이 파티의 <br><b>카드게임 마스터</b>가 되었습니다.';
             cardClear();
-            stage=1;
-        }else if(timeScore<=45){
+            document.querySelector('.go_btn').style.display='none';
+        }else if(timeScore<=70){
             document.querySelector('.illust').style.backgroundImage = "url('./img/cardFrameStage3clear.png')";
-            document.querySelector('.talking').innerHTML = timeScore+'b초만에 짝을 다 맞추다니! 우리도 그정돈 하겠는데? <br>하지만 널 위해 놀라는 척은 해 주지! <br>우리 클럽에 들어오게 하려고 말이야!';
+            document.querySelector('.talking').innerHTML = timeScore+'초만에 짝을 다 맞추다니! 우리도 그정돈 하겠는데? <br>하지만 널 위해 놀라는 척은 해 주지! <br>우리 클럽에 들어오게 하려고 말이야!';
             document.querySelector('.narration').innerHTML='축하합니다! 당신은 이 파티의 <br><b>카드게임 클럽</b>에 가입되셨습니다.';
             cardClear();
-            stage=1;
+            document.querySelector('.go_btn').style.display='none';
         }else{
             document.querySelector('.illust').style.backgroundImage = "url('./img/cardFrameStage3fail.png')";
-            document.querySelector('.talking').innerHTML = timeScore+'c초라니..이건 내가 찍어 맞춰도 안 나오는 시간인데..<br>집중의 힘을 실어줄테니 다시 해봐..얍!';
+            document.querySelector('.talking').innerHTML = timeScore+'초라니..이건 내가 찍어 맞춰도 안 나오는 시간인데..<br>집중의 힘을 실어줄테니 다시 해봐..얍!';
             document.querySelector('.go_btn').style.backgroundImage = "url('../common/img/fortuneAgainButton.png')";
             document.querySelector('.go_btn').innerHTML='';
             stage=3;
@@ -129,6 +129,7 @@ function shuffle() {
 
 function cardSetting() {
     //초기화
+    document.querySelector('.cards').style.opacity=1;
     document.querySelector('.cards').innerHTML = '';
     colorList = colors.slice();
     color = [];
@@ -180,11 +181,11 @@ function cardSetting() {
                                 document.querySelector('.time').innerHTML='';
                                 if (clear === false) {
                                     document.querySelector('.cards').classList.remove('stage-' + stage);
+                                    document.querySelector('.cards').style.opacity=0;
                                     stage++;
                                     clear = true;
                                 }
                                 showModal();
-
                             }
                         } else {
                             clickFlag = false;

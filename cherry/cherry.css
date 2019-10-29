@@ -1,0 +1,202 @@
+.content .page-1{
+    display: block;
+}
+.content>div{
+    display: none;
+}
+
+.illust *{
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
+
+.cherry{
+    width: 350px;
+    height: 450px;
+    margin: 50px auto 30px auto;
+}
+.page-1 .cherry{
+    background-image: url(./img/cherrySad.png);
+}
+.page-2 .cherry{
+    background-image: url(./img/cherrySurprised.png);
+}
+.page-3 .cherry{
+    background-image: url(./img/cherryHappy.png);
+}
+.page-4 .illust{
+    width: 700px;
+    height: 768px;
+    position: relative;
+    margin: 50px auto 30px auto;
+   
+}
+
+.page-4 .illust>*{
+    position: absolute;
+}
+
+.page-4 .sound{
+    width: 70px;
+    height: 50px;
+    top: 0;
+    left: 0;
+    background-image: url(./img/cherryPumpkinMusicOff.png);
+    cursor: pointer;
+    z-index: 3;
+}
+.page-4 .sound.on{
+    background-image: url(./img/cherryPumpkinMusicOn.png);
+}
+.page-4 .pumpkin{
+    width: 700px;
+    height: 604px;
+    background-image: url(./img/cherryPumpkin.png);
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.page-4 .face{
+    width: 425px;
+    height: 282px;
+    background-image: url(./img/cherryPumpkinFace.png);
+    z-index: 2;
+    top: 220px;
+    left: 138px;
+}
+
+.page-4 .letters{
+    width: 368px;
+    height: 134px;
+    bottom: 0;
+    left: 160px;
+    background-image: url(./img/cherryEndingText.png);
+}
+
+
+
+
+#snackbar{
+    width: 430px;
+}
+button{
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    margin: 0 auto 100px auto;
+    position: relative;
+    display: block;
+    animation-name: balloon;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+    cursor: pointer;
+    width: 54px;
+    height: 54px;
+}
+.qst_btn{
+    background-image: url(./img/cherryButtonRed.png);
+}
+.next_btn{
+    background-image: url(./img/cherrybtn_blue.png);
+}
+
+
+@-webkit-keyframes balloon {
+    0% {
+        top: 0;
+    }
+    50% {
+        top: -15px;
+    }
+    100% {
+        top: 0;
+    }
+}
+
+.text{
+    background-color: #fff;
+    padding: 20px 30px;
+    max-width: 350px;
+    border-radius: 30px;
+    margin: 138px auto 0 auto;
+    text-align: center;
+    line-height: 1.5;
+}
+.narration{
+    color: #fff;
+    text-align: center;
+    margin: 0 0 45px 0;
+    line-height: 1.5;
+    font-weight: 100;
+}
+
+.mini_logo{
+    width: 30px;
+    height: 30px;
+    margin: 30px auto 100px auto;
+    display: block;
+    background-image: url(./img/cherryLogoWhite.png);
+    background-size: contain;
+}
+
+
+@media screen and (max-width: 720px) {
+
+    .text{
+        background-color: #fff;
+        padding: 20px;
+        width: 100%;
+        max-width: initial;
+        border-radius: 0;
+        margin: 80px auto 0 auto;
+        text-align: center;
+        box-sizing: border-box;
+    }
+    .cherry{
+        width: 220px;
+        height: 300px;
+    }
+    button{
+        margin: 0 auto 50px auto;
+    }
+
+
+
+    .page-4 .illust{
+        width: 348px;
+        height: 400px;
+        margin-top: 75px;
+    }
+    .page-4 .sound{
+        width: 30px;
+        height: 24px;
+        position: fixed;
+        top: 30px;
+        left: 50%;
+        margin-left: -15px;
+    }
+    .page-4 .pumpkin{
+        width: 348px;
+        height: 302px;
+    }
+    
+    .page-4 .face{
+        width: 212px;
+        height: 140px;
+        background-image: url(./img/cherryPumpkinFace.png);
+        z-index: 2;
+        top: 110px;
+        left: 70px;
+    }
+    
+    .page-4 .letters{
+        width: 184px;
+        height: 66px;
+        left: 91px;
+    }
+
+
+
+}

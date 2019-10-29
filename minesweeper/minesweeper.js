@@ -31,8 +31,7 @@ function showModal(stage) {
     modal_back.classList.add('fadeIn');
     if(stage===4){
         minesweeperClear();
-        document.querySelector('.go_btn').style.backgroundImage="url('./img/mindsweeperButtonAgain_small.png')";
-        document.querySelector('.go_btn').innerHTML='';
+        document.querySelector('.go_btn').display='none';
     }
     document.querySelector('.go_btn').addEventListener('click', function () {
         setting();
@@ -43,8 +42,6 @@ function showModal(stage) {
         setTimeout(function () {
             modal_back.style.display = 'none';
             modal.children[stage - 1].classList.remove('show');
-            document.querySelector('.go_btn').style.backgroundImage="url('./img/nextButton@2x.png')";
-            document.querySelector('.go_btn').innerHTML='GO!';
         }, 1000)
     })
 }
