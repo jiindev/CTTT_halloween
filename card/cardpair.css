@@ -137,6 +137,39 @@
     font-weight: bold;
 }
 
+.time_limit{
+    padding: 12px 20px;
+    background-color: #fff;
+    display: inline-block;
+    position: absolute;
+    top: -10px;
+    left: 160px;
+    border-radius: 30px;
+    display: none;
+    z-index: 999;
+}
+.time_limit:after{
+    width: 50px;
+    height: 50px;
+    display: block;
+    content: '';
+    background-image: url(./img/cardMobileTalkLeft.png);
+    background-size: contain;
+    position: absolute;
+    left: -45px;
+    top: 0;
+    background-position: center center;
+}
+
+.stage{
+    position: absolute;
+    width: 110px;
+    top: 10px;
+    left: 50%;
+    margin-left: -50px;
+    z-index: 444;
+}
+
 .deco{
     background-size: contain;
     position: absolute;
@@ -189,6 +222,7 @@
 
 
 @media screen and (max-width: 950px) {
+    
     .game_section{
         width: 720px;
         height: 556px;
@@ -206,6 +240,11 @@
     .deco3{
         bottom: -80px;
         right: 20px;
+    }
+    .stage{
+        position: absolute;
+        width: 110px;
+        top: 5px;
     }
     .stage-3.cards{
         width: 540px;
@@ -261,6 +300,15 @@
         background-repeat: no-repeat;
     }
 
+    .stage{
+        position: fixed;
+        width: 100px;
+        top: 30px;
+        left: 50%;
+        margin-left: -50px;
+    }
+
+    
     .card{
         width: 80px;
         height: 94px;
@@ -280,6 +328,7 @@
         box-sizing: border-box;
         margin: 0 auto;
         text-align: center;
+        padding-top: 63px;
     }
     .stage-2.cards{
         padding-top: 14px;
@@ -293,6 +342,7 @@
         width: 30px;
         height: 30px;
         background-image: url(../common/img/moblileLogo@2x.png);
+        background-position: center center;
     }
 
     .time{
@@ -309,6 +359,26 @@
 
     .deco{
         display: none;
+    }
+
+    .time_limit{
+       
+        position: fixed;
+        top: 100px;
+        left: initial;
+        right: 30px;
+       
+        
+    }
+    .time_limit:after{
+        width: 30px;
+        height: 30px;
+        transform: rotate(90deg);
+        position: absolute;
+        top:-30px;
+        left: initial;
+        right: 10px;
+        background-position: center center;
     }
 
     

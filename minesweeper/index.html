@@ -7,14 +7,28 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../common/css/reset.css">
     <link rel="stylesheet" href="minesweeper.css">
-    <title>디디의 유령찾기</title>
+    <title>Mary’s halloween party :: Ghost graveyard</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="icon" href="../common/img/favicon.ico">
+    <meta property="og:image" content="http://cartoontattoo.cafe24.com/halloween/common/img/thumb_minesweeper.jpg">
+    <meta property="og:description" content="카툰타투의 할로윈 웹 스낵게임! Cartoon tattoo's web snack game!">
+    <meta http-equiv="content-language" content="ko">
 </head>
 
 <body>
     <div id="snackbar"></div>
     <div class="fixed_logo">
-        <a href="../index.html"><span class="logo"></span></a>
+        <a href="../"><span class="logo"></span></a>
+    </div>
+    <div class="howto_modal animated bounceInDown">
+        <h3>HOW TO PLAY</h3>
+        <div class="illust"></div>
+        <p class="narration">디디가 <b>유령</b>을 피해 <b>땅</b>을 팔 수 있도록 도와줘! <br>
+            <b>타일에 적힌 숫자</b>는 주변에 숨어있는 <b>유령의 수</b>야. <br>
+            <b>마우스 오른쪽 버튼</b>으로 <b>깃발</b>을 꽂고 <span class="mobile_br"><br></span><b>?표시</b>를 할 수 있어. (모바일은 꾹 누르기) <br>
+            유령이 있다고 생각되는 곳에 <b>깃발</b>을, <span class="mobile_br"><br></span>헷갈리는 곳엔 <b>?표시</b>를 해봐~</p>
+        <div class="sub_illust"></div>
+        <div class="close_btn"></div>
     </div>
     <div class="modal animated bounceInDown">
         <div class="start_page">
@@ -53,7 +67,6 @@
                     유령 케이크를 구웠어. 같이 먹자!</p>
                 <p class="narration">디디는 질색하며 도망갔습니다.</p>
             </div>
-
         </div>
         <button class="go_btn">GO!</button>
     </div>
@@ -72,14 +85,21 @@
                 <div class="deco2"></div>
                 <div class="deco3"></div>
             </div>
+            <div class="game_info clearfix">
+                <div class="stage">
+                    <span class="stg-1"></span>
+                    <span class="stg-2"></span>
+                    <span class="stg-3"></span>
+                </div>
+                <div class="howto"></div>
+            </div>
             <table id="table">
                 <tbody></tbody>
             </table>
         </div>
     </div>
-
     <footer>
-        copyright(c) 2019 CTTT All rights reserved
+        copyright(c) 2019 CTTT All rights reserved <a href="https://twitter.com/C_T_T_T" target="blank"><img src="../common/img/twitter.png"></a><a href="https://www.instagram.com/cttt.tattoosticker/" target="blank"><img src="../common/img/insta.png"></a>
     </footer>
     <script src="../common/js/cookie.js"></script>
     <script src="minesweeper.js"></script>

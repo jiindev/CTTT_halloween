@@ -3,10 +3,24 @@ body{
     overflow-x: hidden; 
 }
 
+
 h2{
     padding: 35px 0 0 0 ;
 }
-
+.cttt_modal.modal .illust{
+    width: 400px;
+    height: 250px;
+    background-image: url(./img/creditCTTT.PNG);
+}
+.cttt_modal.modal .name{
+    margin: 20px 0 10px 0;
+}
+.cttt_modal.modal p.maker{
+    color: #BCBCBC;
+    text-align: center;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
 .modal{
     background-color: #000;
     position: fixed;
@@ -134,6 +148,7 @@ h2{
     animation-name: foggy;
     animation-iteration-count: infinite;
     pointer-events: none;
+    pointer-events: none;
 }
 .fog1{
     background-image: url(./img/cloudFrontLeft.png);
@@ -169,6 +184,7 @@ h2{
     animation-name: balloon;
     animation-duration: 2s;
     animation-iteration-count: infinite;
+    pointer-events: none;
 }
 .top_fur{
     width: 180px;
@@ -256,9 +272,17 @@ h2{
     background-size: contain;
     background-repeat: no-repeat;
     margin: 0 auto;
+    cursor: pointer;
+    position: relative;
+    top: 0;
+    transition: all .2s ease;
+}
+.grey_logo:hover{
+    top: -10px;
 }
 .top_section p.bottom{
-    padding: 30px 0 0 0;
+    padding: 20px 0 0 0;
+    line-height: 1.2;
 }
 .grave{
     position: relative;
@@ -300,6 +324,12 @@ h2{
     color: #2C2C2C;
     padding: 20px 0;
     cursor: pointer;
+    transition: all .2s ease;
+    position: relative;
+    top: 0;
+}
+.supporters li:hover{
+    top: -5px;
 }
 .bottom_section .dirt{
     width: 100%;
@@ -336,6 +366,12 @@ h2{
     background-size: 1400px 440px;
     background-position: center bottom;
     z-index: 1;
+}
+
+footer{
+    background-color: #000;
+    z-index: 999;
+    position: relative;
 }
 
 @media screen and (max-width: 1000px) {

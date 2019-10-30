@@ -240,6 +240,15 @@ footer {
   text-align: center;
   padding: 0 0 10px 0;
 }
+footer a{
+  margin: 0 2px;
+}
+footer img{
+  display: inline-block;
+  vertical-align: middle;
+  width: 15px;
+  height: 15px;
+}
 
 .fixed_logo {
   position: fixed;
@@ -274,6 +283,26 @@ button:focus {
 
 html {
   scroll-behavior: smooth;
+}
+
+.stage span{
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  background-size: contain;
+  opacity: .3;
+}
+.stage span.stg-1{
+  background-image: url(../img/gameLevel1.png);
+}
+.stage span.stg-2{
+  background-image: url(../img/gameLevel2.png);
+}
+.stage span.stg-3{
+  background-image: url(../img/gameLevel3.png);
+}
+.stage span.on{
+  opacity: 1;
 }
 
 #snackbar {

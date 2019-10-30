@@ -1,0 +1,45 @@
+.illust{
+    width: 250px;
+    height: 250px;
+    background-image: url(./img/frameinvitation.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 50px auto 20px;
+}
+
+p.top{
+    font-weight: 500;
+    font-size: 18px;
+}
+p{
+    color: #fff;
+    text-align: center;
+    font-weight: 100;
+    line-height: 1.5;
+}
+
+.content{
+}
+
+.etc{
+    color: #BCBCBC;
+    font-size: 12px;
+    margin: 50px 0 10px 0;
+}
+
+.go_btn{
+    width: 82px;
+    height: 70px;
+    border: 0;
+    background-color: transparent;
+    background-image: url(./img/nextButton@2x.png);
+    background-size: contain;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 30px auto 50px auto; 
+    display: none;
+    cursor: pointer;
+}
+.go_btn:hover{
+    background-image: url(./img/nextButtonMouseOver@2x.png);
+}

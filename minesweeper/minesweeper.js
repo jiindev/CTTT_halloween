@@ -13,15 +13,36 @@ let code = {
 }
 let hor, ver, mine;
 
+//게임방법 모달로 나오기
+let howtoModal = document.querySelector('.howto_modal');
+let modal = document.querySelector('.modal');
+let modal_back = document.querySelector('.modal_back');
+
+document.querySelector('.howto').addEventListener('click', function () {
+    howtoModal.classList.remove('bounceOutUp');
+    howtoModal.classList.add('bounceInDown');
+    howtoModal.classList.add('show');
+    modal_back.classList.remove('fadeOut');
+    modal_back.classList.add('fadeIn');
+    modal_back.style.display = 'block';
+});
+document.querySelector('.close_btn').addEventListener('click', function () {
+    howtoModal.classList.remove('bounceInDown');
+    howtoModal.classList.add('bounceOutUp');
+    modal_back.classList.remove('fadeIn');
+    modal_back.classList.add('fadeOut');
+    setTimeout(function () {
+        modal_back.style.display = 'none';
+        howtoModal.classList.remove('show');
+    }, 1000)
+});
+
 //1라운드 시작
 let stage = 1;
 showModal(stage);
 
 //각 스테이지마다 나오는 모달창 애니메이션
-
 function showModal(stage) {
-    let modal_back = document.querySelector('.modal_back');
-    let modal = document.querySelector('.modal');
     document.querySelector('.modal_back').style.display = 'block';
     modal.children[stage - 1].classList.add('show');
     modal.children[stage - 1].classList.add('show');
@@ -29,11 +50,15 @@ function showModal(stage) {
     modal.classList.add('bounceInDown');
     modal_back.classList.remove('fadeOut');
     modal_back.classList.add('fadeIn');
-    if(stage===4){
+    if (stage === 4) {
         minesweeperClear();
-        document.querySelector('.go_btn').display='none';
+        document.querySelector('.go_btn').style.backgroundImage = "url(../common/img/ghostHomeButton.png)";
+        document.querySelector('.go_btn').innerHTML = '';
     }
     document.querySelector('.go_btn').addEventListener('click', function () {
+        if (stage === 4) {
+            location.href = '../index.html';
+        }
         setting();
         modal.classList.remove('bounceInDown');
         modal.classList.add('bounceOutUp');
@@ -49,9 +74,9 @@ function showModal(stage) {
 //최초 클리어 시 스낵바 & 키 셋팅
 function minesweeperClear() {
     let minesweeper_clear = getCookie('minesweeper');
-    if(!minesweeper_clear){
-        setCookie('minesweeper','true', 365);
-        document.querySelector('#snackbar').innerHTML='이야깃거리 <bold>[유령 피해다니기]</bold>가 생겼습니다!';
+    if (!minesweeper_clear) {
+        setCookie('minesweeper', 'true', 365);
+        document.querySelector('#snackbar').innerHTML = '이야깃거리 <bold>[유령 피해다니기]</bold>가 생겼습니다!';
         var snackbar = document.getElementById("snackbar");
         snackbar.className = "show";
         setTimeout(function () {
@@ -69,7 +94,8 @@ function setting() {
     tbody.innerHTML = '';
     dataset = [];
     //스테이지 별 난이도 조절
-    if(stage===4) stage=1;
+    if (stage === 4) stage = 1;
+    document.querySelector('.stg-' + stage).classList.add('on');
     if (stage === 1) {
         hor = 9;
         ver = 9;
@@ -110,7 +136,9 @@ function setting() {
         for (let j = 0; j < hor; j++) {
             arr.push(code.normal);
             let td = document.createElement('td');
-            td.addEventListener('contextmenu', function (e) {
+
+            //우클릭 시 깃발, 물음표 꽂을 수 있도록
+            function rightClick(e) {
                 document.querySelector('.face').style.backgroundImage = "url('./img/DDfaceNormal@2x.png')";
                 e.preventDefault();
                 if (stopFlag === true) {
@@ -121,6 +149,7 @@ function setting() {
                 let tdX = Array.prototype.indexOf.call(parentTr.children, e.currentTarget);
                 let tdY = Array.prototype.indexOf.call(parentTbody.children, parentTr);
                 if (dataset[tdY][tdX] === code.normal || dataset[tdY][tdX] === code.mine) {
+                   //깃발 꽂기
                     e.currentTarget.classList.add('flag');
                     flagNum++;
                     if (dataset[tdY][tdX] === code.mine) {
@@ -129,6 +158,7 @@ function setting() {
                         dataset[tdY][tdX] = code.flag;
                     }
                 } else if (dataset[tdY][tdX] === code.flag || dataset[tdY][tdX] === code.flagmine) {
+                    //물음표 꽂기
                     e.currentTarget.classList.add('qst');
                     e.currentTarget.classList.remove('flag');
                     flagNum--;
@@ -138,6 +168,7 @@ function setting() {
                         dataset[tdY][tdX] = code.qst;
                     }
                 } else if (dataset[tdY][tdX] === code.qst || dataset[tdY][tdX] === code.qstmine) {
+                    //기본 상태
                     e.currentTarget.classList.remove('qst');
                     if (dataset[tdY][tdX] === code.qstmine) {
                         dataset[tdY][tdX] = code.mine;
@@ -146,8 +177,14 @@ function setting() {
                         dataset[tdY][tdX] = code.normal;
                     }
                 }
+                //남은 지뢰 갯수 표기
                 document.querySelector('.mine_num').textContent = mine - flagNum;
+            }
+            td.addEventListener('contextmenu', function (e) {
+                rightClick(e);
             });
+            
+            //마우스 클릭 시 일러스트의 표정 변화
             td.addEventListener('mousedown', function (e) {
                 let parentTr = e.currentTarget.parentNode;
                 let parentTbody = e.currentTarget.parentNode.parentNode;
@@ -159,6 +196,7 @@ function setting() {
                     }
                 }
             });
+            //땅을 마우스로 클릭 시
             td.addEventListener('click', function (e) {
                 if (stopFlag === true) {
                     return;
@@ -259,6 +297,7 @@ function setting() {
                 //스테이지 클리어
                 if (openSqr === hor * ver - mine) {
                     stopFlag = true;
+                    document.querySelector('.stg-' + stage).classList.remove('on');
                     //한번만 실행되도록
                     if (clear == false) {
                         document.querySelector('#table').classList.remove('stage-' + stage);
@@ -278,7 +317,6 @@ function setting() {
     for (let k = 0; k < shuffle.length; k++) {
         let ver_pos = Math.floor(shuffle[k] / hor);
         let hor_pos = shuffle[k] % hor;
-        // tbody.children[ver_pos].children[hor_pos].textContent = "X";
         dataset[ver_pos][hor_pos] = code.mine;
     }
 
