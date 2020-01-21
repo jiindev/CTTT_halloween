@@ -6,4 +6,5 @@ http://cartoontattoo.cafe24.com/halloween/
 
 https://tumblbug.com/cttthalloween
 
-made by jiji studio (designer jisu & developer jiin)
+DESIGN BY [JISU PARK](https://github.com/gpg1127)
+CODE BY [JIIN EUM](https://github.com/jiindev)
