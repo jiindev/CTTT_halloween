@@ -165,6 +165,7 @@
     left: 470px;
     animation: none;
     cursor: pointer;
+    z-index: 11;
 }
 .sound>*{
     position: absolute;
@@ -396,11 +397,11 @@
     }
 
     .pumpkin a {
-        background-image: url(./img/mobileMainButtonPumpkin.png);
+        background-image: url(./img/mobileMainButtonPumpkin.png) !important;
     }
 
     .card a {
-        background-image: url(./img/mobileMainButtonCardmatch.png);
+        background-image: url(./img/mobileMainButtonCardmatch.png) !important;
     }
 
     .mine a {

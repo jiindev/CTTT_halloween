@@ -4,9 +4,13 @@ let card_clear = getCookie('card');
 let fortune_clear = getCookie('fortune');
 let ending = getCookie('ending');
 
+
 // minesweeper_clear = true;
 // card_clear = true;
 // fortune_clear = true;
+
+setCookie('name', '??', 365);
+alert(getCookie('name'));
 
 function cookieCheck() {
     //아이콘 opacity 변경
