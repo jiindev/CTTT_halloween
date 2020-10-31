@@ -2,6 +2,12 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@font-face {
+  font-family: 'MaplestoryOTFLight';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFLight.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 
 html,
 body,
@@ -230,7 +236,7 @@ button{
 body {
   background-image: url(../img/bg@2x.png);
   background-size: 500px 500px;
-  font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+  font-family: 'MaplestoryOTFLight', sans-serif;
 }
 
 footer {
