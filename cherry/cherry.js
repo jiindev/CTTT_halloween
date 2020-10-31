@@ -9,8 +9,8 @@ let ending = getCookie('ending');
 // card_clear = true;
 // fortune_clear = true;
 
-setCookie('name', '??', 365);
-alert(getCookie('name'));
+// setCookie('name', '??', 365);
+// alert(getCookie('name'));
 
 function cookieCheck() {
     //아이콘 opacity 변경
